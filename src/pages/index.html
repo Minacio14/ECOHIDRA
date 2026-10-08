@@ -11,34 +11,8 @@
 
 <!-- HERO -->
 <section class="hero">
-  <svg class="hero-scene" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-    <defs>
-      <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4fd1c5" stop-opacity=".55"/><stop offset="1" stop-color="#4fd1c5" stop-opacity="0"/></radialGradient>
-      <linearGradient id="riv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9af0e6"/><stop offset="1" stop-color="#35b9c0"/></linearGradient>
-      <linearGradient id="hill3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f6b73"/><stop offset="1" stop-color="#0b2f36"/></linearGradient>
-    </defs>
-    <circle cx="1090" cy="190" r="260" fill="url(#glow)"/>
-    <path d="M0 560C150 470 280 520 430 440S690 330 860 410 1180 520 1440 400V820H0Z" fill="#4fd1c5" fill-opacity=".10"/>
-    <path d="M0 640C170 560 330 610 500 540S800 450 980 520 1250 610 1440 520V820H0Z" fill="#4fd1c5" fill-opacity=".16"/>
-    <path d="M0 720C200 650 380 700 560 650S900 590 1100 650 1330 700 1440 660V820H0Z" fill="url(#hill3)"/>
-    <!-- river -->
-    <g transform="translate(470 -40)">
-    <path class="scene-river" d="M610 600C640 640 600 670 650 700S760 720 800 760 900 800 930 830" fill="none" stroke="url(#riv)" stroke-width="7" stroke-linecap="round"/>
-    <path class="scene-river flow" d="M610 600C640 640 600 670 650 700S760 720 800 760 900 800 930 830" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 16"/>
-    <g fill="none" stroke="#9af0e6" stroke-width="1.5">
-      <ellipse class="ripple r1" cx="700" cy="715" rx="10" ry="3.5"/>
-      <ellipse class="ripple r2" cx="790" cy="752" rx="10" ry="3.5"/>
-      <ellipse class="ripple r3" cx="868" cy="795" rx="10" ry="3.5"/>
-    </g>
-    </g>
-    <!-- rain -->
-    <g stroke="#cfe7e4" stroke-linecap="round" stroke-width="1.6" class="rain">
-      <line x1="120" y1="40" x2="112" y2="66"/><line x1="260" y1="10" x2="252" y2="36"/><line x1="420" y1="60" x2="412" y2="86"/>
-      <line x1="560" y1="20" x2="552" y2="46"/><line x1="700" y1="70" x2="692" y2="96"/><line x1="840" y1="30" x2="832" y2="56"/>
-      <line x1="980" y1="80" x2="972" y2="106"/><line x1="1220" y1="40" x2="1212" y2="66"/><line x1="1340" y1="90" x2="1332" y2="116"/>
-      <line x1="60" y1="140" x2="52" y2="166"/><line x1="340" y1="150" x2="332" y2="176"/><line x1="1280" y1="170" x2="1272" y2="196"/>
-    </g>
-  </svg>
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-shade" aria-hidden="true"></div>
 
   <div class="wrap hero-grid">
     <div class="hero-copy">
@@ -98,13 +72,56 @@
       <h2 data-en="Six practice areas around one resource: water" data-pt="Seis áreas de actuação em torno de um recurso: a água">Seis áreas de actuação em torno de um recurso: a água</h2>
       <p data-en="From the first site screening to the final technical report, each study follows recognised methods and states its assumptions." data-pt="Da primeira triagem do local ao relatório técnico final, cada estudo segue métodos reconhecidos e declara os seus pressupostos.">Da primeira triagem do local ao relatório técnico final, cada estudo segue métodos reconhecidos e declara os seus pressupostos.</p>
     </div>
-    <div class="svc-list">
-      <a href="/servicos#hidrologia" class="svc-row reveal"><div class="svc-num">01</div><h3 data-en="Hydrology and floods" data-pt="Hidrologia e cheias">Hidrologia e cheias</h3><div class="svc-text"><p data-en="Design rainfall, peak flows by return period, catchment delineation and flood-hazard mapping." data-pt="Chuvas de projecto, caudais de ponta por período de retorno, delimitação de bacias e mapeamento de risco de cheia.">Chuvas de projecto, caudais de ponta por período de retorno, delimitação de bacias e mapeamento de risco de cheia.</p><div class="tags"><span class="tag">HEC-HMS</span><span class="tag">HEC-RAS 2D</span><span class="tag">SCS-CN</span></div></div></a>
-      <a href="/servicos#drenagem" class="svc-row reveal"><div class="svc-num">02</div><h3 data-en="Drainage and hydraulic structures" data-pt="Drenagem e estruturas hidráulicas">Drenagem e estruturas hidráulicas</h3><div class="svc-text"><p data-en="Culverts, bridges and channels for roads, railways, estates and industrial platforms — sized and checked." data-pt="Aquedutos, pontes e canais para estradas, ferrovias, urbanizações e plataformas industriais — dimensionados e verificados.">Aquedutos, pontes e canais para estradas, ferrovias, urbanizações e plataformas industriais — dimensionados e verificados.</p><div class="tags"><span class="tag" data-en="Culverts" data-pt="Aquedutos">Aquedutos</span><span class="tag" data-en="Channels" data-pt="Canais">Canais</span><span class="tag" data-en="Road &amp; rail" data-pt="Estradas e ferrovias">Estradas e ferrovias</span></div></div></a>
-      <a href="/servicos#hidrogeologia" class="svc-row reveal"><div class="svc-num">03</div><h3 data-en="Hydrogeology" data-pt="Hidrogeologia">Hidrogeologia</h3><div class="svc-text"><p data-en="Groundwater flow and transport models, dewatering design and piezometric monitoring strategies." data-pt="Modelos de fluxo e transporte de águas subterrâneas, projecto de rebaixamento e estratégias de monitorização piezométrica.">Modelos de fluxo e transporte de águas subterrâneas, projecto de rebaixamento e estratégias de monitorização piezométrica.</p><div class="tags"><span class="tag">MODFLOW 6</span><span class="tag" data-en="Dewatering" data-pt="Rebaixamento">Rebaixamento</span><span class="tag" data-en="Piezometry" data-pt="Piezometria">Piezometria</span></div></div></a>
-      <a href="/servicos#ambiente" class="svc-row reveal"><div class="svc-num">04</div><h3 data-en="Environment and water quality" data-pt="Ambiente e qualidade da água">Ambiente e qualidade da água</h3><div class="svc-text"><p data-en="Water components of environmental impact studies, quality monitoring, contaminant plumes and recovery of degraded areas." data-pt="Componentes hídricas de estudos de impacto ambiental, monitorização da qualidade, plumas de contaminantes e recuperação de áreas degradadas.">Componentes hídricas de estudos de impacto ambiental, monitorização da qualidade, plumas de contaminantes e recuperação de áreas degradadas.</p><div class="tags"><span class="tag tag-leaf" data-en="Impact studies" data-pt="Impacto ambiental">Impacto ambiental</span><span class="tag tag-leaf" data-en="Water quality" data-pt="Qualidade da água">Qualidade da água</span></div></div></a>
+
+    <div class="showcase reveal">
+      <div class="showcase-list" id="showcase-list">
+        <a href="/servicos#hidrologia" class="sc-item active" data-idx="0">
+          <span class="sc-num">01</span>
+          <div>
+            <h3 data-en="Hydrology and floods" data-pt="Hidrologia e cheias">Hidrologia e cheias</h3>
+            <p data-en="Design rainfall, peak flows by return period, catchment delineation and flood-hazard mapping." data-pt="Chuvas de projecto, caudais de ponta por período de retorno, delimitação de bacias e mapeamento de risco de cheia.">Chuvas de projecto, caudais de ponta por período de retorno, delimitação de bacias e mapeamento de risco de cheia.</p>
+            <div class="tags"><span class="tag">HEC-HMS</span><span class="tag">HEC-RAS 2D</span><span class="tag">SCS-CN</span></div>
+            <img class="sc-thumb" src="/img/terrain-hydro.jpg" alt="" loading="lazy">
+          </div>
+        </a>
+        <a href="/servicos#drenagem" class="sc-item" data-idx="1">
+          <span class="sc-num">02</span>
+          <div>
+            <h3 data-en="Drainage and hydraulic structures" data-pt="Drenagem e estruturas hidráulicas">Drenagem e estruturas hidráulicas</h3>
+            <p data-en="Culverts, bridges and channels for roads, railways, estates and industrial platforms — sized and checked." data-pt="Aquedutos, pontes e canais para estradas, ferrovias, urbanizações e plataformas industriais — dimensionados e verificados.">Aquedutos, pontes e canais para estradas, ferrovias, urbanizações e plataformas industriais — dimensionados e verificados.</p>
+            <div class="tags"><span class="tag" data-en="Culverts" data-pt="Aquedutos">Aquedutos</span><span class="tag" data-en="Channels" data-pt="Canais">Canais</span><span class="tag" data-en="Road &amp; rail" data-pt="Estradas e ferrovias">Estradas e ferrovias</span></div>
+            <img class="sc-thumb" src="/img/n1-relief.jpg" alt="" loading="lazy">
+          </div>
+        </a>
+        <a href="/servicos#hidrogeologia" class="sc-item" data-idx="2">
+          <span class="sc-num">03</span>
+          <div>
+            <h3 data-en="Hydrogeology" data-pt="Hidrogeologia">Hidrogeologia</h3>
+            <p data-en="Groundwater flow and transport models, dewatering design and piezometric monitoring strategies." data-pt="Modelos de fluxo e transporte de águas subterrâneas, projecto de rebaixamento e estratégias de monitorização piezométrica.">Modelos de fluxo e transporte de águas subterrâneas, projecto de rebaixamento e estratégias de monitorização piezométrica.</p>
+            <div class="tags"><span class="tag">MODFLOW 6</span><span class="tag" data-en="Dewatering" data-pt="Rebaixamento">Rebaixamento</span><span class="tag" data-en="Piezometry" data-pt="Piezometria">Piezometria</span></div>
+            <img class="sc-thumb" src="/img/hydrogeo.svg" alt="" loading="lazy">
+          </div>
+        </a>
+        <a href="/servicos#ambiente" class="sc-item" data-idx="3">
+          <span class="sc-num">04</span>
+          <div>
+            <h3 data-en="Environment and water quality" data-pt="Ambiente e qualidade da água">Ambiente e qualidade da água</h3>
+            <p data-en="Water components of environmental impact studies, quality monitoring, contaminant plumes and recovery of degraded areas." data-pt="Componentes hídricas de estudos de impacto ambiental, monitorização da qualidade, plumas de contaminantes e recuperação de áreas degradadas.">Componentes hídricas de estudos de impacto ambiental, monitorização da qualidade, plumas de contaminantes e recuperação de áreas degradadas.</p>
+            <div class="tags"><span class="tag tag-leaf" data-en="Impact studies" data-pt="Impacto ambiental">Impacto ambiental</span><span class="tag tag-leaf" data-en="Water quality" data-pt="Qualidade da água">Qualidade da água</span></div>
+            <img class="sc-thumb" src="/img/terrain-env.jpg" alt="" loading="lazy">
+          </div>
+        </a>
+      </div>
+
+      <div class="showcase-media" aria-hidden="true">
+        <img class="sc-img active" data-idx="0" src="/img/terrain-hydro.jpg" alt="">
+        <img class="sc-img" data-idx="1" src="/img/n1-relief.jpg" alt="">
+        <img class="sc-img" data-idx="2" src="/img/hydrogeo.svg" alt="">
+        <img class="sc-img" data-idx="3" src="/img/terrain-env.jpg" alt="">
+        <div class="sc-caption" id="sc-caption" data-en="River network derived from terrain data" data-pt="Rede de drenagem derivada de dados de terreno">Rede de drenagem derivada de dados de terreno</div>
+      </div>
     </div>
-    <div style="margin-top:2rem"><a href="/servicos" class="btn btn-ghost" data-en="All practice areas →" data-pt="Todas as áreas →">Todas as áreas →</a></div>
+    <div style="margin-top:2.4rem"><a href="/servicos" class="btn btn-ghost" data-en="All practice areas →" data-pt="Todas as áreas →">Todas as áreas →</a></div>
   </div>
 </section>
 

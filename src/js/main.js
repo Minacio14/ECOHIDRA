@@ -83,6 +83,27 @@
       items.forEach(function (el) { io.observe(el); });
     } else { items.forEach(function (el) { el.classList.add('in'); }); }
 
+    // Services showcase: hover/focus/click swaps the image on the right
+    var items = document.querySelectorAll('.sc-item'), imgs = document.querySelectorAll('.sc-img'), cap = document.getElementById('sc-caption');
+    if (items.length && imgs.length) {
+      var caps = [
+        ['Rede de drenagem derivada de dados de terreno (bacia do Rovubué)', 'River network derived from terrain data (Rovubue basin)'],
+        ['N1: 89 travessias sobre a rede de drenagem', 'N1: 89 crossings over the drainage network'],
+        ['Secção hidrogeológica esquemática: furo, rebaixamento e piezómetros', 'Schematic hydrogeological section: borehole, drawdown and piezometers'],
+        ['Confluência e planície de inundação a partir do relevo', 'Confluence and floodplain from terrain relief']
+      ];
+      function pick(i) {
+        items.forEach(function (el) { el.classList.toggle('active', el.getAttribute('data-idx') === String(i)); });
+        imgs.forEach(function (el) { el.classList.toggle('active', el.getAttribute('data-idx') === String(i)); });
+        if (cap) { cap.setAttribute('data-pt', caps[i][0]); cap.setAttribute('data-en', caps[i][1]); cap.textContent = caps[i][window.__lang === 'en' ? 1 : 0]; }
+      }
+      items.forEach(function (el) {
+        var i = el.getAttribute('data-idx');
+        el.addEventListener('mouseenter', function () { pick(i); });
+        el.addEventListener('focus', function () { pick(i); });
+      });
+    }
+
     // Contact form → composes an e-mail (and optional WhatsApp message); nothing is sent silently.
     var form = document.getElementById('contact-form');
     if (form) {
