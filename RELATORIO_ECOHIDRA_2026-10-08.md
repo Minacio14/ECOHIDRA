@@ -58,6 +58,10 @@ Para mudar de nome: editar `site.config.json` (`brand`, `brandFullPt`, `brandFul
 4. **NUIT público.** O NUIT pessoal está visível no site. Quando tiver o enquadramento definitivo, mudar ou remover `nuit` no config.
 5. **Dados dos estudos.** As folhas e páginas incluem nomes e locais (Botswana/falha Zoetfontein e coordenadas UTM na folha de águas subterrâneas, condomínio Vale dos Embondeiros, acesso ao Alojamento B). Isto é igual ao site SIGHA. Se o repositório GitHub for público, esses ficheiros ficam públicos também.
 
+### Fase 3: ajustes visuais e de texto (feedback no site live)
+- Texto: "África Austral" passou a **"África e a nível mundial"** nas descrições de atendimento (home, Sobre, contacto e meta description). Os títulos dos estudos mantêm a localização real dos casos.
+- Primeira página redesenhada para convidar a descer: hero em ecrã inteiro com fundo verde-azulado profundo, paisagem animada (chuva, rio e ondulações), cartão de vidro com hietograma → hidrograma que se desenha, cabeçalho transparente sobre o hero, seta "Descobrir" que leva aos serviços e transição ondulada para a secção seguinte. Respeita `prefers-reduced-motion`.
+
 ## 5. Pendências técnicas (sessão de retrabalho dos estudos)
 
 Itens da auditoria de 2026-10-07 que continuam por refazer: revalidação da N1 (só 7 de 89 cruzamentos comparados com HMS/RAS; declive em graus tratado como %), declive e controlo do aqueduto Al_B, Q fixos do CVE, extensão de inundação do Rovubué quase invariável com o caudal, volume do reservatório e equações de brecha de Cahora Bassa, e anonimização do estudo MODFLOW. As páginas "Ruptura de barragem" e "Água subterrânea" ainda trazem frases como "PAEBM" que a auditoria sugeria rever.

@@ -1,66 +1,87 @@
 <!--@title Hidrologia, hidráulica e ambiente-->
-<!--@desc Consultoria independente em recursos hídricos e ambiente: estudos de cheias, drenagem e estruturas hidráulicas, hidrogeologia e qualidade da água para infraestruturas, mineração e urbanismo em África Austral.-->
+<!--@desc Consultoria independente em recursos hídricos e ambiente: estudos de cheias, drenagem e estruturas hidráulicas, hidrogeologia e qualidade da água para infraestruturas, mineração e urbanismo, em África e a nível mundial.-->
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
 {{> head}}
 </head>
-<body>
+<body class="has-hero">
 {{> nav}}
 <main id="main">
 
 <!-- HERO -->
 <section class="hero">
+  <svg class="hero-scene" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4fd1c5" stop-opacity=".55"/><stop offset="1" stop-color="#4fd1c5" stop-opacity="0"/></radialGradient>
+      <linearGradient id="riv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9af0e6"/><stop offset="1" stop-color="#35b9c0"/></linearGradient>
+      <linearGradient id="hill3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f6b73"/><stop offset="1" stop-color="#0b2f36"/></linearGradient>
+    </defs>
+    <circle cx="1090" cy="190" r="260" fill="url(#glow)"/>
+    <path d="M0 560C150 470 280 520 430 440S690 330 860 410 1180 520 1440 400V820H0Z" fill="#4fd1c5" fill-opacity=".10"/>
+    <path d="M0 640C170 560 330 610 500 540S800 450 980 520 1250 610 1440 520V820H0Z" fill="#4fd1c5" fill-opacity=".16"/>
+    <path d="M0 720C200 650 380 700 560 650S900 590 1100 650 1330 700 1440 660V820H0Z" fill="url(#hill3)"/>
+    <!-- river -->
+    <g transform="translate(470 -40)">
+    <path class="scene-river" d="M610 600C640 640 600 670 650 700S760 720 800 760 900 800 930 830" fill="none" stroke="url(#riv)" stroke-width="7" stroke-linecap="round"/>
+    <path class="scene-river flow" d="M610 600C640 640 600 670 650 700S760 720 800 760 900 800 930 830" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 16"/>
+    <g fill="none" stroke="#9af0e6" stroke-width="1.5">
+      <ellipse class="ripple r1" cx="700" cy="715" rx="10" ry="3.5"/>
+      <ellipse class="ripple r2" cx="790" cy="752" rx="10" ry="3.5"/>
+      <ellipse class="ripple r3" cx="868" cy="795" rx="10" ry="3.5"/>
+    </g>
+    </g>
+    <!-- rain -->
+    <g stroke="#cfe7e4" stroke-linecap="round" stroke-width="1.6" class="rain">
+      <line x1="120" y1="40" x2="112" y2="66"/><line x1="260" y1="10" x2="252" y2="36"/><line x1="420" y1="60" x2="412" y2="86"/>
+      <line x1="560" y1="20" x2="552" y2="46"/><line x1="700" y1="70" x2="692" y2="96"/><line x1="840" y1="30" x2="832" y2="56"/>
+      <line x1="980" y1="80" x2="972" y2="106"/><line x1="1220" y1="40" x2="1212" y2="66"/><line x1="1340" y1="90" x2="1332" y2="116"/>
+      <line x1="60" y1="140" x2="52" y2="166"/><line x1="340" y1="150" x2="332" y2="176"/><line x1="1280" y1="170" x2="1272" y2="196"/>
+    </g>
+  </svg>
+
   <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow" data-en="Independent water &amp; environment consulting" data-pt="Consultoria independente em água e ambiente">Consultoria independente em água e ambiente</span>
-      <h1 data-html data-en="Water decisions made with <em>clear evidence</em>." data-pt="Decisões sobre água tomadas com <em>evidência clara</em>.">Decisões sobre água tomadas com <em>evidência clara</em>.</h1>
-      <p class="hero-lead" data-en="{{BRAND}} supports infrastructure, mining and urban projects with hydrology, hydraulics, hydrogeology and environmental studies — industry-standard tools, delivered faster through streamlined data workflows." data-pt="A {{BRAND}} apoia projectos de infraestrutura, mineração e urbanismo com hidrologia, hidráulica, hidrogeologia e estudos ambientais — ferramentas padrão da indústria, entregues mais depressa através de fluxos de dados optimizados.">A {{BRAND}} apoia projectos de infraestrutura, mineração e urbanismo com hidrologia, hidráulica, hidrogeologia e estudos ambientais — ferramentas padrão da indústria, entregues mais depressa através de fluxos de dados optimizados.</p>
-      <div class="hero-cta">
+    <div class="hero-copy">
+      <span class="eyebrow ha ha1" data-en="Independent water &amp; environment consulting" data-pt="Consultoria independente em água e ambiente">Consultoria independente em água e ambiente</span>
+      <h1 class="ha ha2" data-html data-en="Water decisions made with <em>clear evidence</em>." data-pt="Decisões sobre água tomadas com <em>evidência clara</em>.">Decisões sobre água tomadas com <em>evidência clara</em>.</h1>
+      <p class="hero-lead ha ha3" data-en="{{BRAND}} supports infrastructure, mining and urban projects with hydrology, hydraulics, hydrogeology and environmental studies — industry-standard tools, delivered faster through streamlined data workflows." data-pt="A {{BRAND}} apoia projectos de infraestrutura, mineração e urbanismo com hidrologia, hidráulica, hidrogeologia e estudos ambientais — ferramentas padrão da indústria, entregues mais depressa através de fluxos de dados optimizados.">A {{BRAND}} apoia projectos de infraestrutura, mineração e urbanismo com hidrologia, hidráulica, hidrogeologia e estudos ambientais — ferramentas padrão da indústria, entregues mais depressa através de fluxos de dados optimizados.</p>
+      <div class="hero-cta ha ha4">
         <a href="/servicos" class="btn btn-clay btn-large" data-en="Explore services" data-pt="Ver serviços">Ver serviços</a>
-        <a href="/contacto" class="btn btn-ghost btn-large" data-en="Request a proposal" data-pt="Pedir proposta">Pedir proposta</a>
+        <a href="/contacto" class="btn btn-ghost-light btn-large" data-en="Request a proposal" data-pt="Pedir proposta">Pedir proposta</a>
       </div>
-      <div class="hero-meta">
+      <div class="hero-meta ha ha5">
         <div><strong>HEC-RAS · HMS</strong><span data-en="Floods &amp; hydraulics" data-pt="Cheias e hidráulica">Cheias e hidráulica</span></div>
         <div><strong>MODFLOW 6</strong><span data-en="Groundwater" data-pt="Águas subterrâneas">Águas subterrâneas</span></div>
-        <div><strong>SADC</strong><span data-en="Remote delivery in Southern Africa" data-pt="Atendimento remoto em África Austral">Atendimento remoto em África Austral</span></div>
+        <div><strong>Global</strong><span data-en="Remote delivery across Africa and worldwide" data-pt="Atendimento remoto em África e a nível mundial">Atendimento remoto em África e a nível mundial</span></div>
       </div>
     </div>
 
-    <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 480 500" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <linearGradient id="water" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8be9de"/><stop offset="1" stop-color="#2bb3b8"/></linearGradient>
-        </defs>
-        <g fill="none" stroke="#7fd9d0" stroke-opacity=".28" stroke-width="1.3">
-          <path d="M-10 120C70 90 130 130 210 100S360 40 420 80 490 110 500 100"/>
-          <path d="M-10 170C70 130 135 180 215 145S365 80 425 125 490 150 500 140"/>
-          <path d="M-10 220C70 175 140 235 220 195S370 125 430 170 490 195 500 185"/>
-          <path d="M-10 270C75 220 145 290 225 245S375 170 435 215 490 240 500 230"/>
-          <path d="M-10 320C80 265 150 345 230 295S380 215 440 262 490 285 500 275"/>
-          <path d="M-10 370C85 310 155 400 235 345S385 260 445 310 490 330 500 320"/>
-          <path d="M-10 420C90 355 160 455 240 395S390 305 450 357 490 375 500 365"/>
-        </g>
-        <!-- watershed boundary -->
-        <path d="M120 70C180 30 300 40 350 95S420 210 380 300 300 430 230 450 110 420 85 330 70 110 120 70Z" fill="rgba(255,255,255,.05)" stroke="#f7f3ea" stroke-opacity=".55" stroke-width="1.6" stroke-dasharray="6 7"/>
-        <!-- tributaries -->
-        <g fill="none" stroke="url(#water)" stroke-linecap="round">
-          <path class="river" d="M150 110C170 150 210 160 215 200S200 260 225 300" stroke-width="2.4"/>
-          <path class="river" d="M330 130C300 170 290 200 255 220S230 270 225 300" stroke-width="2.4"/>
-          <path class="river" d="M110 250C150 255 190 280 225 300" stroke-width="2"/>
-          <path class="river" d="M225 300C228 340 240 380 232 450" stroke-width="5"/>
-          <path class="river" d="M310 330C285 320 250 315 225 300" stroke-width="2"/>
-        </g>
-        <!-- outlet -->
-        <circle class="pulse" cx="232" cy="450" r="9" fill="#d9764a" fill-opacity=".6"/>
-        <circle cx="232" cy="450" r="6" fill="#d9764a" stroke="#f7f3ea" stroke-width="2"/>
-        <text x="218" y="454" text-anchor="end" fill="#f7f3ea" font-family="Manrope, sans-serif" font-size="11" font-weight="700" letter-spacing=".08em">EXUTÓRIO</text>
-        <text x="270" y="74" fill="#f7f3ea" fill-opacity=".8" font-family="Manrope, sans-serif" font-size="11" font-weight="700" letter-spacing=".08em">BACIA</text>
-      </svg>
-      <div class="chip chip-2"><b>TR25 – TR100</b><span data-en="design flows per crossing" data-pt="caudais de projecto por travessia">caudais de projecto por travessia</span></div>
-      <div class="chip chip-1"><b>89 / 196</b><span data-en="crossings / watersheds in the N1 demo" data-pt="travessias / bacias no estudo N1">travessias / bacias no estudo N1</span></div>
+    <div class="hero-viz ha ha3" aria-hidden="true">
+      <div class="glass hydro-card">
+        <div class="glass-head"><span data-en="From rainfall to peak flow" data-pt="Da chuva ao caudal de ponta">Da chuva ao caudal de ponta</span><span class="live-dot"></span></div>
+        <svg viewBox="0 0 360 230" class="hydro-svg">
+          <defs><linearGradient id="qfill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4fd1c5" stop-opacity=".55"/><stop offset="1" stop-color="#4fd1c5" stop-opacity="0"/></linearGradient></defs>
+          <g stroke="#ffffff" stroke-opacity=".16"><line x1="30" y1="40" x2="350" y2="40"/><line x1="30" y1="110" x2="350" y2="110"/><line x1="30" y1="180" x2="350" y2="180"/></g>
+          <g fill="#8fd3ff" fill-opacity=".85" class="bars">
+            <rect x="48" y="40" width="20" height="14" rx="2"/><rect x="72" y="40" width="20" height="30" rx="2"/><rect x="96" y="40" width="20" height="52" rx="2"/><rect x="120" y="40" width="20" height="34" rx="2"/><rect x="144" y="40" width="20" height="18" rx="2"/><rect x="168" y="40" width="20" height="8" rx="2"/>
+          </g>
+          <path class="q-area" d="M30 180C80 180 110 178 140 150S190 70 215 76 262 138 300 166 340 180 350 180V180H30Z" fill="url(#qfill)"/>
+          <path class="q-line" d="M30 180C80 180 110 178 140 150S190 70 215 76 262 138 300 166 340 180 350 180" fill="none" stroke="#9af0e6" stroke-width="3" stroke-linecap="round"/>
+          <line x1="215" y1="76" x2="215" y2="190" stroke="#d9764a" stroke-dasharray="4 4" stroke-width="1.5"/>
+          <circle class="peak" cx="215" cy="76" r="6" fill="#d9764a" stroke="#fff" stroke-width="2"/>
+          <text x="226" y="70" fill="#fff" font-family="Manrope, sans-serif" font-size="12" font-weight="800">Qp</text>
+          <text x="32" y="26" fill="#cfe7e4" font-family="Manrope, sans-serif" font-size="10" font-weight="700" letter-spacing=".08em">CHUVA</text>
+          <text x="32" y="210" fill="#cfe7e4" font-family="Manrope, sans-serif" font-size="10" font-weight="700" letter-spacing=".08em">CAUDAL</text>
+        </svg>
+        <div class="glass-foot"><span>TR25</span><span>TR50</span><span class="on">TR100</span></div>
+      </div>
+      <div class="glass chip-glass"><b>89 / 196</b><span data-en="crossings / watersheds screened in the N1 study" data-pt="travessias / bacias analisadas no estudo N1">travessias / bacias analisadas no estudo N1</span></div>
     </div>
   </div>
+
+  <a href="#servicos" class="scroll-cue" aria-label="Descer"><span data-en="Scroll" data-pt="Descobrir">Descobrir</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
+
+  <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C240 90 480 90 720 50S1200 -10 1440 40V90H0Z" fill="#0b2f36"/></svg>
 </section>
 
 <div class="strip" aria-label="Ferramentas e dados">
@@ -70,7 +91,7 @@
 </div>
 
 <!-- SERVICES -->
-<section class="section">
+<section class="section" id="servicos">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow" data-en="What is delivered" data-pt="O que é entregue">O que é entregue</span>
