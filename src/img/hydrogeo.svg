@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b2f36"/><stop offset="1" stop-color="#14808a"/></linearGradient>
-    <linearGradient id="aq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4fd1c5" stop-opacity=".75"/><stop offset="1" stop-color="#1f9fa6" stop-opacity=".55"/></linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1216"/><stop offset="1" stop-color="#1387c6"/></linearGradient>
+    <linearGradient id="aq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#31bfe8" stop-opacity=".75"/><stop offset="1" stop-color="#1f9fa6" stop-opacity=".55"/></linearGradient>
     <linearGradient id="soil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b5961"/><stop offset="1" stop-color="#134650"/></linearGradient>
     <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d3b44"/><stop offset="1" stop-color="#06232a"/></linearGradient>
-    <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.4" fill="#cfe7e4" fill-opacity=".25"/></pattern>
+    <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.4" fill="#d7e9f1" fill-opacity=".25"/></pattern>
     <style>
       .flow { stroke-dasharray: 10 14; animation: mv 2.2s linear infinite; }
       @keyframes mv { to { stroke-dashoffset: -48; } }
@@ -14,14 +14,15 @@
     </style>
   </defs>
   <rect width="1200" height="800" fill="url(#sky)"/>
-  <circle cx="990" cy="130" r="170" fill="#4fd1c5" fill-opacity=".14"/>
+  <circle cx="990" cy="130" r="170" fill="#31bfe8" fill-opacity=".14"/>
   <!-- rain -->
-  <g stroke="#cfe7e4" stroke-width="2.4" stroke-linecap="round">
+  <g stroke="#d7e9f1" stroke-width="2.4" stroke-linecap="round">
     <line class="rain" x1="180" y1="90" x2="170" y2="120"/><line class="rain r2" x1="300" y1="70" x2="290" y2="100"/><line class="rain r3" x1="430" y1="100" x2="420" y2="130"/>
     <line class="rain r2" x1="560" y1="60" x2="550" y2="90"/><line class="rain" x1="680" y1="110" x2="670" y2="140"/><line class="rain r3" x1="800" y1="70" x2="790" y2="100"/>
   </g>
   <!-- ground surface with mine pit on the right -->
   <path d="M0 250C150 240 280 260 430 250S690 240 760 262 830 340 880 420 960 470 1010 420 1060 300 1110 268 1160 250 1200 252V800H0Z" fill="url(#soil)"/>
+  <path class="vegetation" d="M0 250C150 240 280 260 430 250S690 240 760 262 830 340 880 420 960 470 1010 420 1060 300 1110 268 1160 250 1200 252" fill="none" stroke="#3fbf6b" stroke-width="9" stroke-linecap="round"/>
   <!-- aquitard / weathered layer -->
   <path d="M0 330C150 322 280 340 430 330S690 320 760 340 850 410 900 470 960 515 1010 480 1060 370 1110 345 1160 332 1200 334V800H0Z" fill="#0f4953" fill-opacity=".9"/>
   <!-- aquifer -->
@@ -31,22 +32,22 @@
   <path d="M0 600C430 610 760 600 1200 590V800H0Z" fill="url(#rock)"/>
   <g stroke="#2a7c85" stroke-width="2" fill="none" opacity=".7"><path d="M120 620 160 700 130 780"/><path d="M380 610 420 690 400 780"/><path d="M640 612 690 700 660 790"/><path d="M900 600 950 690 930 780"/></g>
   <!-- water table -->
-  <path d="M0 420C150 410 280 432 430 420S690 410 760 430 860 480 910 530 960 565 1010 535 1060 450 1110 435 1160 424 1200 426" fill="none" stroke="#d5f3ef" stroke-width="3.5" stroke-dasharray="14 9"/>
+  <path d="M0 420C150 410 280 432 430 420S690 410 760 430 860 480 910 530 960 565 1010 535 1060 450 1110 435 1160 424 1200 426" fill="none" stroke="#def2fa" stroke-width="3.5" stroke-dasharray="14 9"/>
   <!-- flow arrows in the aquifer -->
-  <g fill="none" stroke="#d5f3ef" stroke-width="3" stroke-linecap="round">
+  <g fill="none" stroke="#def2fa" stroke-width="3" stroke-linecap="round">
     <path class="flow" d="M60 520C260 520 420 524 600 526S800 540 930 570"/>
     <path class="flow" d="M60 560C260 566 420 566 640 566S840 578 960 590" opacity=".7"/>
   </g>
   <!-- borehole + drawdown cone -->
   <path d="M520 420C560 422 570 470 600 470S640 422 680 420" fill="none" stroke="#fff" stroke-width="3"/>
-  <rect x="592" y="252" width="16" height="352" rx="3" fill="#0b2f36" stroke="#d5f3ef" stroke-width="3"/>
-  <rect x="590" y="480" width="20" height="90" rx="3" fill="none" stroke="#4fd1c5" stroke-width="3" stroke-dasharray="4 5"/>
-  <rect x="570" y="236" width="60" height="26" rx="6" fill="#d9764a"/>
-  <path d="M600 236V204" stroke="#d9764a" stroke-width="6" stroke-linecap="round"/>
+  <rect x="592" y="252" width="16" height="352" rx="3" fill="#0a1216" stroke="#def2fa" stroke-width="3"/>
+  <rect x="590" y="480" width="20" height="90" rx="3" fill="none" stroke="#31bfe8" stroke-width="3" stroke-dasharray="4 5"/>
+  <rect x="570" y="236" width="60" height="26" rx="6" fill="#1f8a4c"/>
+  <path d="M600 236V204" stroke="#1f8a4c" stroke-width="6" stroke-linecap="round"/>
   <!-- pit seepage -->
-  <g stroke="#9af0e6" stroke-width="3" stroke-linecap="round"><path d="M900 470v14"/><path d="M930 480v14"/><path d="M968 484v14"/><path d="M990 462v14"/></g>
+  <g stroke="#8fe3f7" stroke-width="3" stroke-linecap="round"><path d="M900 470v14"/><path d="M930 480v14"/><path d="M968 484v14"/><path d="M990 462v14"/></g>
   <!-- monitoring piezometers -->
-  <g stroke="#d5f3ef" stroke-width="3"><line x1="300" y1="262" x2="300" y2="450"/><line x1="810" y1="268" x2="810" y2="486"/></g>
-  <g fill="#d9764a"><circle cx="300" cy="262" r="8"/><circle cx="810" cy="268" r="8"/></g>
+  <g stroke="#def2fa" stroke-width="3"><line x1="300" y1="262" x2="300" y2="450"/><line x1="810" y1="268" x2="810" y2="486"/></g>
+  <g fill="#1f8a4c"><circle cx="300" cy="262" r="8"/><circle cx="810" cy="268" r="8"/></g>
   <g fill="#fff"><circle cx="300" cy="426" r="6"/><circle cx="810" cy="450" r="6"/></g>
 </svg>

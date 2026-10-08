@@ -40,56 +40,64 @@ hs = 0.65 * shade(315, 38) + 0.35 * shade(45, 55)
 # ---- colour by elevation (dark lowlands -> teal -> pale highlands)
 lo, hi = np.percentile(z, 2), np.percentile(z, 99.5)
 t = np.clip((z - lo) / (hi - lo), 0, 1) ** 0.85
-stops = np.array([0.0, 0.35, 0.7, 1.0])
-cols = np.array([[3, 24, 30], [10, 62, 70], [30, 130, 134], [207, 231, 228]], dtype=float)
+stops = np.array([0.0, 0.28, 0.55, 0.78, 1.0])
+cols = np.array([[2, 9, 15], [5, 38, 78], [14, 104, 128], [38, 146, 92], [205, 238, 218]], dtype=float)
 rgb = np.stack([np.interp(t, stops, cols[:, i]) for i in range(3)], axis=-1)
 shade_f = (0.30 + 0.85 * hs)[..., None]
 img = np.clip(rgb * shade_f, 0, 255)
 
-# ---- depression filling (priority flood) + D8 flow accumulation
-fz = z.copy()
-filled = np.full_like(fz, np.inf)
-closed = np.zeros(fz.shape, bool)
-heap = []
-for i in range(H):
-    for j in (0, W - 1):
-        heapq.heappush(heap, (fz[i, j], i, j)); closed[i, j] = True
-for j in range(W):
-    for i in (0, H - 1):
-        if not closed[i, j]:
+import os
+CACHE = OUT + '.acc.npy'
+if os.path.exists(CACHE):
+    acc = np.load(CACHE)
+    print('acc loaded from cache')
+else:
+    # ---- depression filling (priority flood) + D8 flow accumulation
+    fz = z.copy()
+    filled = np.full_like(fz, np.inf)
+    closed = np.zeros(fz.shape, bool)
+    heap = []
+    for i in range(H):
+        for j in (0, W - 1):
             heapq.heappush(heap, (fz[i, j], i, j)); closed[i, j] = True
-nb = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
-eps = 1e-3
-while heap:
-    e, i, j = heapq.heappop(heap)
-    filled[i, j] = e
-    for di, dj in nb:
-        a, b = i + di, j + dj
-        if 0 <= a < H and 0 <= b < W and not closed[a, b]:
-            closed[a, b] = True
-            heapq.heappush(heap, (max(fz[a, b], e + eps), a, b))
-print('filled', round(time.time() - t0, 1), 's')
+    for j in range(W):
+        for i in (0, H - 1):
+            if not closed[i, j]:
+                heapq.heappush(heap, (fz[i, j], i, j)); closed[i, j] = True
+    nb = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
+    eps = 1e-3
+    while heap:
+        e, i, j = heapq.heappop(heap)
+        filled[i, j] = e
+        for di, dj in nb:
+            a, b = i + di, j + dj
+            if 0 <= a < H and 0 <= b < W and not closed[a, b]:
+                closed[a, b] = True
+                heapq.heappush(heap, (max(fz[a, b], e + eps), a, b))
+    print('filled', round(time.time() - t0, 1), 's')
 
-best = np.zeros((H, W)); down = np.full((H, W), -1, dtype=np.int64)
-idx = np.arange(H * W).reshape(H, W)
-pad = np.pad(filled, 1, constant_values=-np.inf)
-for di, dj in nb:
-    nbz = pad[1 + di:1 + di + H, 1 + dj:1 + dj + W]
-    dist = np.hypot(di * dy, dj * dx)
-    drop = (filled - nbz) / dist
-    nidx = np.pad(idx, 1, constant_values=-1)[1 + di:1 + di + H, 1 + dj:1 + dj + W]
-    better = drop > best
-    best = np.where(better, drop, best)
-    down = np.where(better, nidx, down)
-order = np.argsort(-filled.ravel(), kind='stable')
-acc = np.ones(H * W)
-dflat = down.ravel()
-for k in order:
-    d = dflat[k]
-    if d >= 0:
-        acc[d] += acc[k]
-acc = acc.reshape(H, W)
-print('acc', acc.max(), round(time.time() - t0, 1), 's')
+    best = np.zeros((H, W)); down = np.full((H, W), -1, dtype=np.int64)
+    idx = np.arange(H * W).reshape(H, W)
+    pad = np.pad(filled, 1, constant_values=-np.inf)
+    for di, dj in nb:
+        nbz = pad[1 + di:1 + di + H, 1 + dj:1 + dj + W]
+        dist = np.hypot(di * dy, dj * dx)
+        drop = (filled - nbz) / dist
+        nidx = np.pad(idx, 1, constant_values=-1)[1 + di:1 + di + H, 1 + dj:1 + dj + W]
+        better = drop > best
+        best = np.where(better, drop, best)
+        down = np.where(better, nidx, down)
+    order = np.argsort(-filled.ravel(), kind='stable')
+    acc = np.ones(H * W)
+    dflat = down.ravel()
+    for k in order:
+        d = dflat[k]
+        if d >= 0:
+            acc[d] += acc[k]
+    acc = acc.reshape(H, W)
+    print('acc', acc.max(), round(time.time() - t0, 1), 's')
+
+    np.save(CACHE, acc)
 
 # ---- river layer
 la = np.log(acc)
@@ -105,7 +113,7 @@ m = Image.fromarray((np.clip(thick, 0, 1) * 255).astype('uint8'))
 glow1 = np.asarray(m.filter(ImageFilter.GaussianBlur(5)), float) / 255
 glow2 = np.asarray(m.filter(ImageFilter.GaussianBlur(16)), float) / 255
 sharp = np.asarray(m, float) / 255
-aqua = np.array([79, 209, 197.]); white = np.array([200, 255, 248.])
+aqua = np.array([49, 191, 232.]); white = np.array([214, 246, 255.])
 out = img * (1 - 0.55 * np.clip(glow2 * 1.4, 0, 1)[..., None]) + aqua * (0.55 * np.clip(glow2 * 1.4, 0, 1))[..., None]
 out = out * (1 - np.clip(glow1, 0, 1)[..., None] * 0.7) + aqua * (np.clip(glow1, 0, 1)[..., None] * 0.7)
 out = out * (1 - sharp[..., None]) + (aqua * 0.45 + white * 0.55) * sharp[..., None]

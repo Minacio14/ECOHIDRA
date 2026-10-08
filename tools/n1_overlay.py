@@ -22,9 +22,9 @@ crisp = Image.new('RGBA', base.size, (0, 0, 0, 0))
 gd, cdw = ImageDraw.Draw(glow), ImageDraw.Draw(crisp)
 for geom in road.geometry:
     xy = [px(x, y) for x, y in geom.coords]
-    gd.line(xy, fill=(217, 118, 74, 255), width=14)
-    cdw.line(xy, fill=(255, 190, 150, 255), width=4)
-col = {1: (150, 240, 230), 2: (150, 240, 230), 3: (255, 196, 90), 4: (255, 107, 74)}
+    gd.line(xy, fill=(46, 190, 100, 255), width=14)
+    cdw.line(xy, fill=(210, 255, 220, 255), width=4)
+col = {1: (143, 227, 247), 2: (143, 227, 247), 3: (255, 196, 90), 4: (255, 84, 64)}
 rad = {1: 4, 2: 5, 3: 7, 4: 11}
 for lon, lat, rc in sorted(pts, key=lambda t: t[2]):
     x, y = px(lon, lat)

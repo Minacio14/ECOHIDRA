@@ -31,7 +31,7 @@ Para mudar de nome: editar `site.config.json` (`brand`, `brandFullPt`, `brandFul
 | | SIGHA | ECOHIDRA |
 |---|---|---|
 | Fundo | branco | papel creme (#f7f3ea) |
-| Cores | azul-marinho + ciano | verde-azulado profundo + aqua + terracota |
+| Cores | azul-marinho + ciano | preto + azul + verde |
 | Tipografia | Inter | Fraunces (títulos serifados) + Manrope |
 | Hero | foto de fundo com overlay | grelha em duas colunas com ilustração SVG de bacia hidrográfica animada |
 | Serviços | separadores + cartões | lista numerada em linhas |
@@ -70,6 +70,12 @@ Diagnóstico: o SIGHA tem **fotografia** (hero aéreo, equipas no terreno); o EC
 - Aplicado: topo da página inicial em ecrã inteiro com o terreno (efeito de zoom lento), cabeçalhos escuros com terreno em todas as páginas e nos estudos, página Sobre com cabeçalho escuro, bloco "Água e ambiente" e faixa final com fundo de terreno, e na página inicial uma **montra de serviços** em que as imagens trocam ao passar o rato sobre cada serviço.
 - Script de geração (reutilizável para outras bacias): guardado no scratchpad da sessão; os resultados finais estão em `src/img/terrain-*.jpg`, `n1-relief.jpg` e `hydrogeo.svg`.
 - Para fotografia real/IA (campo, equipamento, paisagem africana), ver os prompts sugeridos na conversa.
+
+### Fase 5: identidade azul + verde + preto e logótipo
+- **Logótipo:** a partir da sua referência (gota azul + folha verde + "ECOHIDRA / SOLUÇÕES AMBIENTAIS" a preto) redesenhei o símbolo em vector: uma gota dividida em metade água (azul) e metade folha (verde com nervuras), legível até aos 32 px. Palavra em Montserrat 800, linha de baixo em Montserrat 600 com espaçamento largo. Na pasta `brand/`: SVG do símbolo e PNG transparentes (símbolo, vertical e horizontal, versões escura e branca) com um README das cores.
+- **Paleta do site:** preto `#0a1216`, azul `#0b6fb3` → `#31bfe8`, verde `#1f8a4c` → `#6fd27f`, sobre branco frio `#f6f9fa`. Os botões de acção passaram a verde; os realces e ligações a azul. Foi removido o creme/terracota anterior.
+- **Imagens re-renderizadas** na nova paleta (preto → azul → verde → menta no relevo, rios em azul-ciano brilhante; N1 com o traçado em verde e os cruzamentos críticos em vermelho-laranja, que mantém a leitura de risco).
+- **Cabeçalho e rodapé:** novo lockup (símbolo + ECOHIDRA + "Soluções ambientais"), favicon novo e `theme-color` preto.
 
 ## 5. Pendências técnicas (sessão de retrabalho dos estudos)
 
