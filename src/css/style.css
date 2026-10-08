@@ -435,3 +435,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
   .has-hero .site-header:not(.scrolled) .menu-toggle { border-color: rgba(255,255,255,.4); }
   .has-hero .site-header:not(.scrolled) .menu-toggle span { background: #fff; }
 }
+
+/* shorter laptop screens: keep the scroll cue inside the first viewport */
+@media (min-width: 981px) and (max-height: 820px) {
+  .hero { padding-bottom: 5.2rem; min-height: 100svh; }
+  .hero h1 { font-size: clamp(2.2rem, 3.8vw, 3.1rem); }
+  .hero-lead { font-size: 1.02rem; }
+  .hero-cta { margin-top: 1.2rem; }
+  .hero-meta { margin-top: 1.3rem; padding-top: .9rem; }
+  .hydro-card { max-width: 400px; padding: 1rem 1.1rem .8rem; }
+  .scroll-cue { bottom: 30px; }
+}
