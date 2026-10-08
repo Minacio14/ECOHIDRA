@@ -24,6 +24,10 @@ const tokens = {
   EMAIL: cfg.email,
   WHATSAPP_DIGITS: whatsappDigits,
   LOCATION: cfg.location,
+  OWNER: cfg.owner || '',
+  WHATSAPP_DISPLAY: whatsappDigits.startsWith('258') && whatsappDigits.length === 12 ? `+258 ${whatsappDigits.slice(3, 5)} ${whatsappDigits.slice(5, 8)} ${whatsappDigits.slice(8)}` : (cfg.whatsapp || ''),
+  NUIT: cfg.nuit || '',
+  LINKEDIN: cfg.linkedin || '',
   YEAR: String(new Date().getFullYear()),
 };
 
@@ -45,6 +49,8 @@ function render(html) {
   html = html.replace(/<!--@(\w+)\s+([\s\S]*?)-->\s*/g, (_, k, v) => { meta[k] = v.trim(); return ''; });
   const local = { ...tokens, PAGE_TITLE: meta.title || cfg.brand, PAGE_DESC: meta.desc || '', PAGE_PATH: meta.path || '' };
   for (let i = 0; i < 3; i++) html = html.replace(/\{\{>\s*([\w-]+)\s*\}\}/g, (_, n) => partials[n] ?? '');
+  // optional blocks: {{#KEY}}…{{/KEY}} are kept only when the token has a value
+  html = html.replace(/\{\{#([A-Z_]+)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_, k, body) => (local[k] ? body : ''));
   const sub = (t) => t.replace(/\{\{([A-Z_]+)\}\}/g, (m, k) => (k in local ? local[k] : m));
   return sub(sub(html));
 }
@@ -77,6 +83,7 @@ writeFileSync(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${bas
 const warn = [];
 if (/exemplo\.com/.test(cfg.email)) warn.push('email is still the placeholder (site.config.json → "email")');
 if (!whatsappDigits) warn.push('no WhatsApp number set (optional)');
+if (!cfg.linkedin) warn.push('no LinkedIn URL set (optional — link is hidden)');
 console.log(`Built ${urls.length} pages → dist/` + (warn.length ? '\nWARNINGS:\n - ' + warn.join('\n - ') : ''));
 
 if (process.argv.includes('--serve')) {

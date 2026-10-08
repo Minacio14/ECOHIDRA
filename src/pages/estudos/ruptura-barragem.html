@@ -1,0 +1,131 @@
+<!--@title Simulação de ruptura de barragem — Cahora Bassa-->
+<!--@desc Hypothetical Cahora Bassa dam-break simulation using Copernicus DEM, 5 breach parameter equations (Froehlich, MacDonald, Von Thun, Xu & Zhang), 2 failure modes, and 2D flood routing. Inundation depth, arrival time, and uncertainty envelope maps.-->
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+{{> head}}
+</head>
+<body>
+{{> nav}}
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" data-en="Case study" data-pt="Estudo">Estudo</span>
+    <h1 data-en="Dam-break flood simulation — Cahora Bassa" data-pt="Simulação de ruptura de barragem — Cahora Bassa">Simulação de ruptura de barragem — Cahora Bassa</h1>
+    <p data-en="Hypothetical dam-break scenario on the Cahora Bassa Dam (Zambeze River, Tete) using 5 breach parameter equations, 2 failure modes, and 2D flood routing on Copernicus DEM" data-pt="Cenário hipotético de ruptura da Barragem de Cahora Bassa (Rio Zambeze, Tete) usando 5 equações de parâmetros de brecha, 2 modos de falha e roteamento de cheia 2D no Copernicus DEM">Cenário hipotético de ruptura da Barragem de Cahora Bassa (Rio Zambeze, Tete) usando 5 equações de parâmetros de brecha, 2 modos de falha e roteamento de cheia 2D no Copernicus DEM</p>
+  </div>
+</section>
+
+<article class="study-article">
+        <div class="study-meta">
+            <span class="tag" data-en="Dam Break" data-pt="Ruptura de Barragem">Ruptura de Barragem</span>
+            <span>2026</span>
+            <span>&bull;</span>
+            <span data-en="Demonstration study — hypothetical scenario" data-pt="Estudo demonstrativo — cenário hipotético">Estudo demonstrativo — cenário hipotético</span>
+        </div>
+
+        <blockquote data-en="This is a demonstration study using a hypothetical dam-break scenario. The Cahora Bassa Dam parameters are sourced from public references (Britannica, HCB). The analysis uses these parameters exclusively as reference geometry for a didactic scenario — no implication of real failure risk is made. All results are for workflow demonstration purposes only." data-pt="Este é um estudo demonstrativo usando um cenário hipotético de ruptura de barragem. Os parâmetros da Barragem de Cahora Bassa são obtidos de referências públicas (Britannica, HCB). A análise usa estes parâmetros exclusivamente como geometria de referência para um cenário didático — nenhuma inferência de risco real de falha é feita. Todos os resultados são apenas para demonstração de fluxo de trabalho.">Este é um estudo demonstrativo usando um cenário hipotético de ruptura de barragem. Os parâmetros da Barragem de Cahora Bassa são obtidos de referências públicas (Britannica, HCB). A análise usa estes parâmetros exclusivamente como geometria de referência para um cenário didático — nenhuma inferência de risco real de falha é feita. Todos os resultados são apenas para demonstração de fluxo de trabalho.</blockquote>
+
+        <h2 data-en="Context" data-pt="Contexto">Contexto</h2>
+        <p data-en="Dam-break flood modeling is a critical requirement for mining dam safety (PAEBM — Plano de Ação de Emergência para Barragens de Mineração) and for water supply dams in flood-prone regions. This study demonstrates a fully programmatic dam-break simulation on the Cahora Bassa Dam — the largest hydraulic structure in Mozambique, located on the Zambeze River in Tete province. The simulation covers a 6° × 4° study area (approximately 55,000 km²) downstream of the dam, including the cities of Tete and Moatize and the Zambeze floodplain to the delta." data-pt="A modelagem de cheia por ruptura de barragem é um requisito crítico para segurança de barragens de mineração (PAEBM — Plano de Ação de Emergência para Barragens de Mineração) e para barragens de abastecimento de água em regiões propensas a cheias. Este estudo demonstra uma simulação de ruptura de barragem totalmente programática na Barragem de Cahora Bassa — a maior estrutura hidráulica de Moçambique, localizada no Rio Zambeze na província de Tete. A simulação cobre uma área de estudo de 6° × 4° (aproximadamente 55.000 km²) a jusante da barragem, incluindo as cidades de Tete e Moatize e a planície do Zambeze até o delta.">A modelagem de cheia por ruptura de barragem é um requisito crítico para segurança de barragens de mineração (PAEBM — Plano de Ação de Emergência para Barragens de Mineração) e para barragens de abastecimento de água em regiões propensas a cheias. Este estudo demonstra uma simulação de ruptura de barragem totalmente programática na Barragem de Cahora Bassa — a maior estrutura hidráulica de Moçambique, localizada no Rio Zambeze na província de Tete. A simulação cobre uma área de estudo de 6° × 4° (aproximadamente 55.000 km²) a jusante da barragem, incluindo as cidades de Tete e Moatize e a planície do Zambeze até o delta.</p>
+
+        <h2 data-en="Dam parameters (public sources)" data-pt="Parâmetros da barragem (fontes públicas)">Parâmetros da barragem (fontes públicas)</h2>
+        <table>
+            <thead>
+                <tr><th data-en="Parameter" data-pt="Parâmetro">Parâmetro</th><th data-en="Value" data-pt="Valor">Valor</th><th data-en="Source" data-pt="Fonte">Fonte</th></tr>
+            </thead>
+            <tbody>
+                <tr><td data-en="River" data-pt="Rio">Rio</td><td>Zambeze</td><td>Britannica</td></tr>
+                <tr><td data-en="Dam type" data-pt="Tipo de barragem">Tipo de barragem</td><td data-en="Concrete arch" data-pt="Arco de betão">Arco de betão</td><td>Britannica</td></tr>
+                <tr><td data-en="Dam location" data-pt="Localização">Localização</td><td>32.71°E, 15.95°S (Tete)</td><td>—</td></tr>
+                <tr><td data-en="Dam height" data-pt="Altura da barragem">Altura da barragem</td><td>171 m</td><td>Britannica</td></tr>
+                <tr><td data-en="Crest length" data-pt="Comprimento da crista">Comprimento da crista</td><td>303 m</td><td>Britannica</td></tr>
+                <tr><td data-en="Crest elevation" data-pt="Elevação da crista">Elevação da crista</td><td>~331 m</td><td>Britannica</td></tr>
+                <tr><td data-en="Reservoir volume" data-pt="Volume do reservatório">Volume do reservatório</td><td>~52 km³ (52,000 Mm³)</td><td>Britannica</td></tr>
+                <tr><td data-en="Reservoir WSE" data-pt="NAF do reservatório">NAF do reservatório</td><td>~314 m (normal pool)</td><td>Published</td></tr>
+                <tr><td data-en="Spillway capacity" data-pt="Capacidade do vertedouro">Capacidade do vertedouro</td><td>14,000 m³/s (8 radial gates)</td><td>MarcoPolis / HCB</td></tr>
+                <tr><td data-en="Turbine discharge" data-pt="Descarga turbinada">Descarga turbinada</td><td>2,260 m³/s (5 Francis turbines)</td><td>Academia.edu</td></tr>
+            </tbody>
+        </table>
+
+        <h2 data-en="Breach parameter equations" data-pt="Equações de parâmetros de brecha">Equações de parâmetros de brecha</h2>
+        <p data-en="Following the HEC-RAS Technical Reference recommendation, five regression equations were applied in parallel to obtain a range of plausible breach parameters. Each equation was evaluated for two failure modes (overtopping and piping), producing 10 breach scenarios total." data-pt="Seguindo a recomendação do HEC-RAS Technical Reference, cinco equações de regressão foram aplicadas em paralelo para obter uma faixa de parâmetros de brecha plausíveis. Cada equação foi avaliada para dois modos de falha (galgamento e piping), produzindo 10 cenários de ruptura no total.">Seguindo a recomendação do HEC-RAS Technical Reference, cinco equações de regressão foram aplicadas em paralelo para obter uma faixa de parâmetros de brecha plausíveis. Cada equação foi avaliada para dois modos de falha (galgamento e piping), produzindo 10 cenários de ruptura no total.</p>
+        <ul>
+            <li><strong>Froehlich (1995a):</strong> <span data-en="B_ave = 0.1803 × K₀ × V_w^0.32 × h_b^0.19; t_f = 0.00254 × V_w^0.53 × h_b^(-0.90)" data-pt="B_ave = 0,1803 × K₀ × V_w^0,32 × h_b^0,19; t_f = 0,00254 × V_w^0,53 × h_b^(-0,90)">B_ave = 0,1803 × K₀ × V_w^0,32 × h_b^0,19; t_f = 0,00254 × V_w^0,53 × h_b^(-0,90)</span></li>
+            <li><strong>Froehlich (2008):</strong> <span data-en="B_ave = 0.27 × K₀ × V_w^0.32 × h_b^0.04" data-pt="B_ave = 0,27 × K₀ × V_w^0,32 × h_b^0,04">B_ave = 0,27 × K₀ × V_w^0,32 × h_b^0,04</span></li>
+            <li><strong>MacDonald & Langridge-Monopolis (1984):</strong> <span data-en="B_ave = 0.0625 × (V_w × h_b)^0.25" data-pt="B_ave = 0,0625 × (V_w × h_b)^0,25">B_ave = 0,0625 × (V_w × h_b)^0,25</span></li>
+            <li><strong>Von Thun & Gillette (1990):</strong> <span data-en="B_ave ≈ 3 × h_b (empirical for large earthfill dams)" data-pt="B_ave ≈ 3 × h_b (empírico para grandes barragens de earthfill)">B_ave ≈ 3 × h_b (empírico para grandes barragens de earthfill)</span></li>
+            <li><strong>Xu & Zhang (2009):</strong> <span data-en="B_ave = 0.446 × V_w^0.331 × h_b^0.283 × K_m (K_m = 1.3 overtopping, 0.65 piping)" data-pt="B_ave = 0,446 × V_w^0,331 × h_b^0,283 × K_m (K_m = 1,3 galgamento, 0,65 piping)">B_ave = 0,446 × V_w^0,331 × h_b^0,283 × K_m (K_m = 1,3 galgamento, 0,65 piping)</span></li>
+        </ul>
+        <p data-en="where K₀ is the failure mode coefficient (1.0 for overtopping, 0.8 for piping), V_w is the released water volume, and h_b is the breach height. Lateral slopes follow Froehlich's recommendations: 1.4H:1V for overtopping, 0.9H:1V for piping." data-pt="onde K₀ é o coeficiente de modo de falha (1,0 para galgamento, 0,8 para piping), V_w é o volume de água liberado, e h_b é a altura da brecha. As inclinações laterais seguem as recomendações de Froehlich: 1,4H:1V para galgamento, 0,9H:1V para piping.">onde K₀ é o coeficiente de modo de falha (1,0 para galgamento, 0,8 para piping), V_w é o volume de água liberado, e h_b é a altura da brecha. As inclinações laterais seguem as recomendações de Froehlich: 1,4H:1V para galgamento, 0,9H:1V para piping.</p>
+
+        <h2 data-en="Deliverable sheet" data-pt="Folha de entrega">Folha de entrega</h2>
+        <figure style="margin: 1.5rem 0;">
+            <img src="/estudos/img/dam-break/CahoraBassa_Signature_PT.png"
+                 data-pt-src="/estudos/img/dam-break/CahoraBassa_Signature_PT.png"
+                 data-en-src="/estudos/img/dam-break/CahoraBassa_Signature_EN.png"
+                 alt="Engineering sheet — hypothetical Cahora Bassa dam-break, Zambeze valley"
+                 style="width: 100%; border-radius: 8px; border: 1px solid var(--c-border);">
+            <figcaption style="text-align: center; color: var(--c-text-light); font-size: 0.9rem; margin-top: 0.5rem;" data-en="Synthesis sheet: worst-case inundation depth along the Zambeze valley with dam location and urban centres; scenario table, dam parameters and breach peak-outflow comparison. Full-resolution file available to clients." data-pt="Folha de síntese: profundidade de inundação do cenário pior ao longo do vale do Zambeze com localização da barragem e centros urbanos; tabela de cenários, parâmetros da barragem e comparação de picos por equação de brecha. Ficheiro em resolução total disponível a clientes.">Folha de síntese: profundidade de inundação do cenário pior ao longo do vale do Zambeze com localização da barragem e centros urbanos; tabela de cenários, parâmetros da barragem e comparação de picos por equação de brecha. Ficheiro em resolução total disponível a clientes.</figcaption>
+        </figure>
+
+        <h2 data-en="Breach parameter comparison" data-pt="Comparação de parâmetros de brecha">Comparação de parâmetros de brecha</h2>
+        <figure style="margin: 1.5rem 0;">
+            <img src="/estudos/img/dam-break/fig1_breach_comparison.png" alt="Breach parameter comparison — 5 equations × 2 failure modes" style="width: 100%; border-radius: 8px; border: 1px solid var(--c-border);">
+            <figcaption style="text-align: center; color: var(--c-text-light); font-size: 0.9rem; margin-top: 0.5rem;" data-en="Figure 1: Breach width (left), peak outflow (center), and formation time (right) for all 5 regression equations × 2 failure modes. Blue = overtopping, orange = piping. The range of values reflects the inherent uncertainty in breach parameter estimation." data-pt="Figura 1: Largura de brecha (esquerda), vazão de pico (centro) e tempo de formação (direita) para as 5 equações de regressão × 2 modos de falha. Azul = galgamento, laranja = piping. A faixa de valores reflete a incerteza inerente à estimativa de parâmetros de brecha.">Figura 1: Largura de brecha (esquerda), vazão de pico (centro) e tempo de formação (direita) para as 5 equações de regressão × 2 modos de falha. Azul = galgamento, laranja = piping. A faixa de valores reflete a incerteza inerente à estimativa de parâmetros de brecha.</figcaption>
+        </figure>
+
+        <figure style="margin: 1.5rem 0;">
+            <img src="/estudos/img/dam-break/fig8_summary_table.png" alt="Breach parameter summary table" style="width: 100%; border-radius: 8px; border: 1px solid var(--c-border);">
+            <figcaption style="text-align: center; color: var(--c-text-light); font-size: 0.9rem; margin-top: 0.5rem;" data-en="Figure 2: Breach parameter summary table — all 10 scenarios (5 equations × 2 modes). Blue rows = overtopping, orange rows = piping. Qp ranges from 2.7M to 16.6M m³/s." data-pt="Figura 2: Tabela resumo de parâmetros de brecha — todos os 10 cenários (5 equações × 2 modos). Linhas azuis = galgamento, linhas laranjas = piping. Qp varia de 2,7M a 16,6M m³/s.">Figura 2: Tabela resumo de parâmetros de brecha — todos os 10 cenários (5 equações × 2 modos). Linhas azuis = galgamento, linhas laranjas = piping. Qp varia de 2,7M a 16,6M m³/s.</figcaption>
+        </figure>
+
+        <h2 data-en="Outflow hydrographs" data-pt="Hidrogramas de vazão">Hidrogramas de vazão</h2>
+        <figure style="margin: 1.5rem 0;">
+            <img src="/estudos/img/dam-break/fig2_hydrographs.png" alt="Outflow hydrographs for all breach scenarios" style="width: 100%; border-radius: 8px; border: 1px solid var(--c-border);">
+            <figcaption style="text-align: center; color: var(--c-text-light); font-size: 0.9rem; margin-top: 0.5rem;" data-en="Figure 3: Outflow hydrographs for the 48-hour simulation period. Colored lines show the worst case (red), best case (green), and median (blue) scenarios. Gray lines show all 10 scenarios. The dotted line shows the spillway capacity (14,000 m³/s). Peak outflow ranges from 2.7M to 16.6M m³/s." data-pt="Figura 3: Hidrogramas de vazão para o período de simulação de 48 horas. Linhas coloridas mostram os cenários pior caso (vermelho), melhor caso (verde) e mediano (azul). Linhas cinzentas mostram todos os 10 cenários. A linha pontilhada mostra a capacidade do vertedouro (14.000 m³/s). A vazão de pico varia de 2,7M a 16,6M m³/s.">Figura 3: Hidrogramas de vazão para o período de simulação de 48 horas. Linhas coloridas mostram os cenários pior caso (vermelho), melhor caso (verde) e mediano (azul). Linhas cinzentas mostram todos os 10 cenários. A linha pontilhada mostra a capacidade do vertedouro (14.000 m³/s). A vazão de pico varia de 2,7M a 16,6M m³/s.</figcaption>
+        </figure>
+
+        <h2 data-en="Results summary" data-pt="Resumo de resultados">Resumo de resultados</h2>
+        <ul>
+            <li><strong>5 breach equations</strong> <span data-en="applied in parallel (Froehlich 1995a, Froehlich 2008, MacDonald 1984, Von Thun 1990, Xu & Zhang 2009)" data-pt="aplicadas em paralelo (Froehlich 1995a, Froehlich 2008, MacDonald 1984, Von Thun 1990, Xu & Zhang 2009)">aplicadas em paralelo (Froehlich 1995a, Froehlich 2008, MacDonald 1984, Von Thun 1990, Xu & Zhang 2009)</span></li>
+            <li><strong>2 failure modes:</strong> <span data-en="overtopping (K₀=1.0) and piping (K₀=0.8)" data-pt="galgamento (K₀=1,0) e piping (K₀=0,8)">galgamento (K₀=1,0) e piping (K₀=0,8)</span></li>
+            <li><strong>10 breach scenarios</strong> <span data-en="computed total" data-pt="computados no total">computados no total</span></li>
+            <li><strong>Peak outflow range:</strong> <span data-en="2.7M — 16.6M m³/s" data-pt="2,7M — 16,6M m³/s">2,7M — 16,6M m³/s</span></li>
+            <li><strong>Breach width range:</strong> <span data-en="108 — 8,754 m" data-pt="108 — 8.754 m">108 — 8.754 m</span></li>
+            <li><strong>Breach formation time:</strong> <span data-en="0.03 — 3.9 hours" data-pt="0,03 — 3,9 horas">0,03 — 3,9 horas</span></li>
+            <li><strong>Inundated area:</strong> <span data-en="~97 km² (depth > 0.1m)" data-pt="~97 km² (profundidade > 0,1m)">~97 km² (profundidade > 0,1m)</span></li>
+            <li><strong>Max inundation depth:</strong> <span data-en="160 m (near dam)" data-pt="160 m (próximo à barragem)">160 m (próximo à barragem)</span></li>
+            <li><strong>Simulation period:</strong> <span data-en="48 hours, 30-minute time steps" data-pt="48 horas, passos de 30 minutos">48 horas, passos de 30 minutos</span></li>
+            <li><strong>DEM resolution:</strong> <span data-en="~180m (Copernicus GLO-30, downsampled 6× for computational efficiency)" data-pt="~180m (Copernicus GLO-30, reduzido 6× para eficiência computacional)">~180m (Copernicus GLO-30, reduzido 6× para eficiência computacional)</span></li>
+        </ul>
+
+        <h2 data-en="Data sources" data-pt="Fontes de dados">Fontes de dados</h2>
+        <ul>
+            <li><strong>DEM:</strong> <span data-en="Copernicus GLO-30 (30m resolution), downloaded via OpenTopography API" data-pt="Copernicus GLO-30 (resolução 30m), baixado via API OpenTopography">Copernicus GLO-30 (resolução 30m), baixado via API OpenTopography</span></li>
+            <li><strong>Dam geometry:</strong> <span data-en="Britannica (height, crest length, reservoir volume)" data-pt="Britannica (altura, comprimento da crista, volume do reservatório)">Britannica (altura, comprimento da crista, volume do reservatório)</span></li>
+            <li><strong>Spillway/turbine capacity:</strong> <span data-en="MarcoPolis / HCB and Academia.edu" data-pt="MarcoPolis / HCB e Academia.edu">MarcoPolis / HCB e Academia.edu</span></li>
+            <li><strong>Breach equations:</strong> <span data-en="HEC-RAS Technical Reference (USACE)" data-pt="HEC-RAS Technical Reference (USACE)">HEC-RAS Technical Reference (USACE)</span></li>
+        </ul>
+
+        <h2 data-en="Applications" data-pt="Aplicações">Aplicações</h2>
+        <ul>
+            <li data-en="PAEBM (Plano de Ação de Emergência para Barragens de Mineração) — dam safety compliance" data-pt="PAEBM (Plano de Ação de Emergência para Barragens de Mineração) — conformidade com segurança de barragens">PAEBM (Plano de Ação de Emergência para Barragens de Mineração) — conformidade com segurança de barragens</li>
+            <li data-en="Emergency action planning — evacuation zones and routes based on arrival time maps" data-pt="Planejamento de ação de emergência — zonas e rotas de evacuação baseadas em mapas de tempo de chegada">Planejamento de ação de emergência — zonas e rotas de evacuação baseadas em mapas de tempo de chegada</li>
+            <li data-en="Infrastructure risk assessment — identifying bridges, roads, and buildings within the inundation zone" data-pt="Avaliação de risco à infraestrutura — identificando pontes, estradas e edifícios dentro da zona de inundação">Avaliação de risco à infraestrutura — identificando pontes, estradas e edifícios dentro da zona de inundação</li>
+            <li data-en="Uncertainty quantification — envelope of inundation severity from multiple breach parameter equations" data-pt="Quantificação de incerteza — envolvente de severidade de inundação a partir de múltiplas equações de parâmetros de brecha">Quantificação de incerteza — envolvente de severidade de inundação a partir de múltiplas equações de parâmetros de brecha</li>
+        </ul>
+
+        <blockquote data-en="Demonstration study using a hypothetical dam-break scenario with public dam parameters. For real dam-break studies, the same pipeline applies with site-specific dam geometry, surveyed reservoir bathymetry, and calibrated breach parameters — producing a PAEBM-compliant inundation map with full hydrodynamic validation." data-pt="Estudo demonstrativo usando um cenário hipotético de ruptura com parâmetros públicos da barragem. Para estudos reais de ruptura, o mesmo pipeline se aplica com geometria de barragem site-specific, batimetria de reservatório levantada e parâmetros de ruptura calibrados — produzindo um mapa de inundação em conformidade com PAEBM com validação hidrodinâmica completa.">Estudo demonstrativo usando um cenário hipotético de ruptura com parâmetros públicos da barragem. Para estudos reais de ruptura, o mesmo pipeline se aplica com geometria de barragem site-specific, batimetria de reservatório levantada e parâmetros de ruptura calibrados — produzindo um mapa de inundação em conformidade com PAEBM com validação hidrodinâmica completa.</blockquote>
+
+        <div class="study-nav">
+            <a href="/estudos/risco-cheia" data-en="← Flood Mapping" data-pt="← Mapeamento de Cheia">← Mapeamento de Cheia</a>
+            <a href="/estudos" data-en="All case studies →" data-pt="Todos os cases →">Todos os cases →</a>
+        </div>
+    </article>
+
+</main>
+{{> footer}}
+</body>
+</html>

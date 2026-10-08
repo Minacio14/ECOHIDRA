@@ -1,44 +1,94 @@
-<!--@title Sobre-->
-<!--@desc {{BRAND}} é uma prática independente de consultoria em hidrologia, hidráulica, hidrogeologia e ambiente, com sede em Tete, Moçambique e atendimento remoto em África Austral.-->
+<!--@title Sobre mim — {{OWNER}}-->
+<!--@desc {{OWNER}}, engenheiro geólogo e de recursos hídricos em Tete, Moçambique. Mais de quatro anos em modelação de cheias, águas subterrâneas e drenagem para mineração, infraestruturas e ambiente.-->
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
 {{> head}}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"{{OWNER}}","jobTitle":"Engenheiro Geólogo e de Recursos Hídricos","address":{"@type":"PostalAddress","addressLocality":"Tete","addressCountry":"MZ"},"email":"{{EMAIL}}","url":"{{SITE_URL}}/sobre","knowsAbout":["Hidrologia","Hidráulica","Hidrogeologia","Modelação de cheias","Drenagem"],"knowsLanguage":["pt","en"]}</script>
 </head>
 <body>
 {{> nav}}
 <main id="main">
 
-<section class="page-hero">
-  <div class="wrap">
-    <span class="eyebrow" data-en="About" data-pt="Sobre">Sobre</span>
-    <h1 data-en="An independent practice for water and environment" data-pt="Uma prática independente para água e ambiente">Uma prática independente para água e ambiente</h1>
-    <p data-en="{{BRAND}} — {{BRAND_FULL_EN}}." data-pt="{{BRAND}} — {{BRAND_FULL_PT}}.">{{BRAND}} — {{BRAND_FULL_PT}}.</p>
+<section class="person-hero">
+  <div class="wrap person-grid">
+    <div class="portrait reveal">
+      <img src="/img/marcos.jpg" alt="{{OWNER}}" width="500" height="500">
+      <span class="portrait-badge" data-en="Tete, Mozambique" data-pt="Tete, Moçambique">Tete, Moçambique</span>
+    </div>
+    <div class="person-text">
+      <span class="eyebrow" data-en="About me" data-pt="Sobre mim">Sobre mim</span>
+      <h1>{{OWNER}}</h1>
+      <p class="person-role" data-en="Geological &amp; Water Resources Engineer" data-pt="Engenheiro Geólogo e de Recursos Hídricos">Engenheiro Geólogo e de Recursos Hídricos</p>
+      <p class="person-lead" data-en="For more than four years I have turned terrain, hydrology and infrastructure problems into deliverables a project team can decide with: numerical models for flood risk, groundwater and drainage, built on recognised tools and delivered in days rather than weeks." data-pt="Há mais de quatro anos que transformo problemas de terreno, hidrologia e infraestrutura em entregáveis com que uma equipa de projecto consegue decidir: modelos numéricos de risco de cheia, águas subterrâneas e drenagem, feitos com ferramentas reconhecidas e entregues em dias em vez de semanas.">Há mais de quatro anos que transformo problemas de terreno, hidrologia e infraestrutura em entregáveis com que uma equipa de projecto consegue decidir: modelos numéricos de risco de cheia, águas subterrâneas e drenagem, feitos com ferramentas reconhecidas e entregues em dias em vez de semanas.</p>
+      <div class="hero-cta">
+        {{#WHATSAPP_DIGITS}}<a href="https://wa.me/{{WHATSAPP_DIGITS}}?text=Ol%C3%A1%20Marcos%2C%20vi%20o%20site%20e%20gostaria%20de%20falar%20sobre%20um%20projecto." class="btn btn-clay" target="_blank" rel="noopener" data-en="Talk to me on WhatsApp" data-pt="Falar comigo no WhatsApp">Falar comigo no WhatsApp</a>{{/WHATSAPP_DIGITS}}
+        <a href="mailto:{{EMAIL}}" class="btn btn-ghost" data-en="Send an e-mail" data-pt="Enviar e-mail">Enviar e-mail</a>
+        {{#LINKEDIN}}<a href="{{LINKEDIN}}" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>{{/LINKEDIN}}
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section" style="padding-top:2rem">
+<section class="facts-band">
+  <div class="wrap facts">
+    <div><b>4+</b><span data-en="years in water resources and geology" data-pt="anos em recursos hídricos e geologia">anos em recursos hídricos e geologia</span></div>
+    <div><b>PT · EN</b><span data-en="projects delivered in Portuguese and English" data-pt="projectos em português e inglês">projectos em português e inglês</span></div>
+    <div><b>Tete</b><span data-en="based in Mozambique, working remotely across Southern Africa" data-pt="sediado em Moçambique, com atendimento remoto em África Austral">sediado em Moçambique, com atendimento remoto em África Austral</span></div>
+    <div><b>HEC · MODFLOW</b><span data-en="industry-standard modelling tools" data-pt="ferramentas de modelação padrão da indústria">ferramentas de modelação padrão da indústria</span></div>
+  </div>
+</section>
+
+<section class="section">
   <div class="wrap about-grid">
     <div class="prose reveal">
-      <h2 data-en="Engineering judgement, supported by well-organised data" data-pt="Critério de engenharia, apoiado por dados bem organizados">Critério de engenharia, apoiado por dados bem organizados</h2>
-      <p data-en="{{BRAND}} is an independent consulting practice based in Tete, Mozambique, working remotely across Southern Africa. The focus is water: hydrology, hydraulics, hydrogeology and the environmental questions that come with them." data-pt="A {{BRAND}} é uma prática independente de consultoria sediada em Tete, Moçambique, com atendimento remoto em toda a África Austral. O foco é a água: hidrologia, hidráulica, hidrogeologia e as questões ambientais que as acompanham.">A {{BRAND}} é uma prática independente de consultoria sediada em Tete, Moçambique, com atendimento remoto em toda a África Austral. O foco é a água: hidrologia, hidráulica, hidrogeologia e as questões ambientais que as acompanham.</p>
-      <p data-en="Studies use the tools that regulators and reviewers recognise — HEC-HMS, HEC-RAS, MODFLOW 6 and GRASS GIS — fed by public datasets such as Copernicus DEM, CHIRPS and Sentinel imagery, and by client field data whenever it exists." data-pt="Os estudos usam as ferramentas que reguladores e revisores reconhecem — HEC-HMS, HEC-RAS, MODFLOW 6 e GRASS GIS — alimentadas por conjuntos de dados públicos como Copernicus DEM, CHIRPS e imagens Sentinel, e por dados de campo do cliente sempre que existem.">Os estudos usam as ferramentas que reguladores e revisores reconhecem — HEC-HMS, HEC-RAS, MODFLOW 6 e GRASS GIS — alimentadas por conjuntos de dados públicos como Copernicus DEM, CHIRPS e imagens Sentinel, e por dados de campo do cliente sempre que existem.</p>
-      <p data-en="Streamlined data preparation and model set-up shorten turnaround from weeks to days, leaving more time for interpretation and for the conversation with the project team." data-pt="A preparação de dados e a montagem de modelos optimizadas reduzem o prazo de semanas para dias, deixando mais tempo para a interpretação e para a conversa com a equipa do projecto.">A preparação de dados e a montagem de modelos optimizadas reduzem o prazo de semanas para dias, deixando mais tempo para a interpretação e para a conversa com a equipa do projecto.</p>
-      <h2 style="margin-top:2.2rem" data-en="Sectors" data-pt="Sectores">Sectores</h2>
-      <div class="sectors">
-        <span data-en="Roads &amp; railways" data-pt="Estradas e ferrovias">Estradas e ferrovias</span>
-        <span data-en="Mining" data-pt="Mineração">Mineração</span>
-        <span data-en="Energy" data-pt="Energia">Energia</span>
-        <span data-en="Water supply &amp; sanitation" data-pt="Abastecimento e saneamento">Abastecimento e saneamento</span>
-        <span data-en="Urban development" data-pt="Urbanismo">Urbanismo</span>
-        <span data-en="Environment" data-pt="Ambiente">Ambiente</span>
-      </div>
+      <h2 data-en="How I work" data-pt="Como trabalho">Como trabalho</h2>
+      <p data-en="I am a geological engineer based in Tete, Mozambique, and I work on mining, infrastructure, water resources and environmental projects. My focus is water: how much arrives, where it goes, where it stays and what it carries with it." data-pt="Sou engenheiro geólogo, baseado em Tete, Moçambique, e trabalho em projectos de mineração, infraestruturas, recursos hídricos e estudos ambientais. O meu foco é a água: quanta chega, para onde vai, onde fica e o que transporta consigo.">Sou engenheiro geólogo, baseado em Tete, Moçambique, e trabalho em projectos de mineração, infraestruturas, recursos hídricos e estudos ambientais. O meu foco é a água: quanta chega, para onde vai, onde fica e o que transporta consigo.</p>
+      <p data-en="I use the tools that regulators and reviewers recognise — HEC-HMS, HEC-RAS, MODFLOW 6 and GRASS GIS — with public datasets such as Copernicus DEM, CHIRPS and Sentinel imagery, and with client field data whenever it exists. Streamlined data preparation and model set-up are what shorten the turnaround, and they leave more time for interpretation." data-pt="Uso as ferramentas que reguladores e revisores reconhecem — HEC-HMS, HEC-RAS, MODFLOW 6 e GRASS GIS — com conjuntos de dados públicos como Copernicus DEM, CHIRPS e imagens Sentinel, e com dados de campo do cliente sempre que existem. A preparação de dados e a montagem de modelos optimizadas é o que encurta o prazo e deixa mais tempo para a interpretação.">Uso as ferramentas que reguladores e revisores reconhecem — HEC-HMS, HEC-RAS, MODFLOW 6 e GRASS GIS — com conjuntos de dados públicos como Copernicus DEM, CHIRPS e imagens Sentinel, e com dados de campo do cliente sempre que existem. A preparação de dados e a montagem de modelos optimizadas é o que encurta o prazo e deixa mais tempo para a interpretação.</p>
+      <p data-en="Every study I deliver states its data sources, assumptions and limitations, and comes with a synthesis sheet and a calculation memo that an engineer or a reviewer can follow." data-pt="Cada estudo que entrego declara as fontes de dados, os pressupostos e as limitações, e inclui uma folha síntese e uma memória de cálculo que um engenheiro ou um revisor consegue acompanhar.">Cada estudo que entrego declara as fontes de dados, os pressupostos e as limitações, e inclui uma folha síntese e uma memória de cálculo que um engenheiro ou um revisor consegue acompanhar.</p>
+      <p><a href="/servicos" class="btn btn-ink" data-en="See what I offer →" data-pt="Ver o que ofereço →">Ver o que ofereço →</a></p>
     </div>
     <div class="principles">
-      <div class="principle reveal"><h3 data-en="Recognised methods" data-pt="Métodos reconhecidos">Métodos reconhecidos</h3><p data-en="Industry-standard software and documented procedures, so that every number can be traced to its inputs." data-pt="Software padrão da indústria e procedimentos documentados, para que cada número possa ser rastreado até aos seus dados de entrada.">Software padrão da indústria e procedimentos documentados, para que cada número possa ser rastreado até aos seus dados de entrada.</p></div>
-      <div class="principle reveal"><h3 data-en="Transparent assumptions" data-pt="Pressupostos transparentes">Pressupostos transparentes</h3><p data-en="Data sources, limitations and the level of confidence of each result are stated in the deliverable." data-pt="Fontes de dados, limitações e o nível de confiança de cada resultado são declarados no entregável.">Fontes de dados, limitações e o nível de confiança de cada resultado são declarados no entregável.</p></div>
-      <div class="principle reveal"><h3 data-en="Readable deliverables" data-pt="Entregáveis legíveis">Entregáveis legíveis</h3><p data-en="Synthesis sheets, calculation memos and dashboards that engineers, reviewers and decision-makers can use directly." data-pt="Folhas síntese, memórias de cálculo e painéis que engenheiros, revisores e decisores podem usar directamente.">Folhas síntese, memórias de cálculo e painéis que engenheiros, revisores e decisores podem usar directamente.</p></div>
-      <div class="principle reveal"><h3 data-en="Confidentiality" data-pt="Confidencialidade">Confidencialidade</h3><p data-en="Client data and project identities are protected; demonstration studies rely on public data." data-pt="Os dados e a identidade dos projectos dos clientes são protegidos; os estudos demonstrativos recorrem a dados públicos.">Os dados e a identidade dos projectos dos clientes são protegidos; os estudos demonstrativos recorrem a dados públicos.</p></div>
+      <div class="principle reveal"><h3 data-en="Recognised methods" data-pt="Métodos reconhecidos">Métodos reconhecidos</h3><p data-en="Standard software and documented procedures, so that every number traces back to its inputs." data-pt="Software padrão e procedimentos documentados, para que cada número se rastreie até aos seus dados de entrada.">Software padrão e procedimentos documentados, para que cada número se rastreie até aos seus dados de entrada.</p></div>
+      <div class="principle reveal"><h3 data-en="Transparent assumptions" data-pt="Pressupostos transparentes">Pressupostos transparentes</h3><p data-en="Sources, limitations and confidence level are written into the deliverable." data-pt="Fontes, limitações e nível de confiança ficam escritos no entregável.">Fontes, limitações e nível de confiança ficam escritos no entregável.</p></div>
+      <div class="principle reveal"><h3 data-en="Direct contact" data-pt="Contacto directo">Contacto directo</h3><p data-en="One person from first call to final report: no hand-offs and a quick answer on WhatsApp or e-mail." data-pt="Uma só pessoa, da primeira conversa ao relatório final: sem intermediários e com resposta rápida por WhatsApp ou e-mail.">Uma só pessoa, da primeira conversa ao relatório final: sem intermediários e com resposta rápida por WhatsApp ou e-mail.</p></div>
+      <div class="principle reveal"><h3 data-en="Confidentiality" data-pt="Confidencialidade">Confidencialidade</h3><p data-en="Client data and project identities are protected." data-pt="Os dados e a identidade dos projectos dos clientes são protegidos.">Os dados e a identidade dos projectos dos clientes são protegidos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-en="Experience" data-pt="Experiência">Experiência</span>
+      <h2 data-en="Representative work (client details withheld)" data-pt="Trabalho representativo (detalhes de clientes omitidos)">Trabalho representativo (detalhes de clientes omitidos)</h2>
+    </div>
+    <div class="modes">
+      <div class="mode reveal"><h3 data-en="Bridge hydraulics" data-pt="Hidráulica de pontes">Hidráulica de pontes</h3><p data-en="Unsteady-flow modelling of a ~1.5 km channel to assess scour and stability next to an excavation, and steady-state modelling of road and rail crossings." data-pt="Modelação de escoamento não permanente num canal de ~1,5 km para avaliar erosão e estabilidade junto a uma escavação, e modelação em regime permanente de travessias rodoviárias e ferroviárias.">Modelação de escoamento não permanente num canal de ~1,5 km para avaliar erosão e estabilidade junto a uma escavação, e modelação em regime permanente de travessias rodoviárias e ferroviárias.</p></div>
+      <div class="mode reveal"><h3 data-en="Railway drainage" data-pt="Drenagem ferroviária">Drenagem ferroviária</h3><p data-en="Screening of hundreds of kilometres of drainage structures, flagging undersized culverts and bridges by comparing field data with modelled capacity." data-pt="Triagem de centenas de quilómetros de estruturas de drenagem, assinalando aquedutos e pontes subdimensionados ao comparar dados de campo com a capacidade modelada.">Triagem de centenas de quilómetros de estruturas de drenagem, assinalando aquedutos e pontes subdimensionados ao comparar dados de campo com a capacidade modelada.</p></div>
+      <div class="mode reveal"><h3 data-en="Open-pit drainage" data-pt="Drenagem de cava">Drenagem de cava</h3><p data-en="Reconstruction of the internal drainage of an open-pit area without survey data, using terrain reconditioning to enforce realistic flow paths." data-pt="Reconstrução da drenagem interna de uma área de cava sem dados de levantamento, com recondicionamento do terreno para impor trajectos de escoamento realistas.">Reconstrução da drenagem interna de uma área de cava sem dados de levantamento, com recondicionamento do terreno para impor trajectos de escoamento realistas.</p></div>
+      <div class="mode reveal"><h3 data-en="Catchment workflows" data-pt="Fluxos de bacia">Fluxos de bacia</h3><p data-en="A streamlined workflow for watershed delineation, curve numbers and runoff coefficients that replaced a multi-week GIS routine." data-pt="Um fluxo optimizado de delimitação de bacias, curve numbers e coeficientes de escoamento que substituiu uma rotina SIG de várias semanas.">Um fluxo optimizado de delimitação de bacias, curve numbers e coeficientes de escoamento que substituiu uma rotina SIG de várias semanas.</p></div>
+    </div>
+    <p style="margin-top:1.6rem"><a href="/estudos" class="btn btn-ghost" data-en="See demonstration studies →" data-pt="Ver estudos demonstrativos →">Ver estudos demonstrativos →</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap about-grid">
+    <div class="prose reveal">
+      <h2 data-en="Sectors" data-pt="Sectores">Sectores</h2>
+      <div class="sectors">
+        <span data-en="Mining" data-pt="Mineração">Mineração</span>
+        <span data-en="Roads &amp; railways" data-pt="Estradas e ferrovias">Estradas e ferrovias</span>
+        <span data-en="Water resources" data-pt="Recursos hídricos">Recursos hídricos</span>
+        <span data-en="Energy" data-pt="Energia">Energia</span>
+        <span data-en="Urban development" data-pt="Urbanismo">Urbanismo</span>
+        <span data-en="Environmental studies" data-pt="Estudos ambientais">Estudos ambientais</span>
+      </div>
+    </div>
+    <div class="prose reveal">
+      <h2 data-en="Working details" data-pt="Dados de trabalho">Dados de trabalho</h2>
+      <p><strong>{{OWNER}}</strong> — <span data-en="independent consultant" data-pt="consultor independente">consultor independente</span><br>NUIT {{NUIT}}<br>{{LOCATION}}<br><a href="mailto:{{EMAIL}}">{{EMAIL}}</a>{{#WHATSAPP_DIGITS}}<br>WhatsApp {{WHATSAPP_DISPLAY}}{{/WHATSAPP_DIGITS}}</p>
     </div>
   </div>
 </section>

@@ -1,0 +1,91 @@
+<!--@title Modelagem de transporte de contaminantes em aquíferos-->
+<!--@desc MODFLOW 6 + GWT sulphate plume modelling over 100 years for an open-pit mine in Botswana — pit inflow 4.8k m³/d, drawdown up to 42 m, capture zone 4.1 km².-->
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+{{> head}}
+</head>
+<body>
+{{> nav}}
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" data-en="Case study" data-pt="Estudo">Estudo</span>
+    <h1 data-en="Contaminant transport modeling in aquifers" data-pt="Modelagem de transporte de contaminantes em aquíferos">Modelagem de transporte de contaminantes em aquíferos</h1>
+    <p data-en="MODFLOW 6 + GWT sulphate plume transport over 100 years — pit dewatering, capture zone and water budget for an open-pit mine in Botswana" data-pt="Transporte de pluma de sulfato MODFLOW 6 + GWT em 100 anos — drenagem da cava, zona de captura e balanço hídrico para uma mina a céu aberto no Botswana">Transporte de pluma de sulfato MODFLOW 6 + GWT em 100 anos — drenagem da cava, zona de captura e balanço hídrico para uma mina a céu aberto no Botswana</p>
+  </div>
+</section>
+
+<article class="study-article">
+        <div class="study-meta">
+            <span class="tag" data-en="Environmental Risk" data-pt="Risco Ambiental">Risco Ambiental</span>
+            <span>2026</span>
+            <span>&bull;</span>
+            <span data-en="Mine hydrogeology — Botswana" data-pt="Hidrogeologia mineira — Botswana">Hidrogeologia mineira — Botswana</span>
+        </div>
+
+        <h2 data-en="Context" data-pt="Contexto">Contexto</h2>
+        <p data-en="For mining and industrial sites, understanding how a contaminant plume evolves over time is critical for environmental impact assessment and remediation planning. An open-pit mine model couples steady-state groundwater flow with sulphate transport from the waste-rock dump — quantifying pit inflow for dewatering design, the drawdown cone, and whether the pit capture zone contains the plume over a 100-year horizon." data-pt="Para sites de mineração e industriais, entender como uma pluma de contaminante evolui ao longo do tempo é crítico para avaliação de impacto ambiental e planejamento de remediação. O modelo de uma mina a céu aberto na África Austral acopla fluxo de águas subterrâneas em regime permanente com transporte de sulfato a partir da pilha de estéril — quantificando a infiltração na cava para dimensionamento do rebaixamento, o cone de abatimento, e se a zona de captura da cava contém a pluma num horizonte de 100 anos.">O modelo de uma mina a céu aberto na África Austral acopla fluxo de águas subterrâneas em regime permanente com transporte de sulfato a partir da pilha de estéril — quantificando a infiltração na cava para dimensionamento do rebaixamento, o cone de abatimento, e se a zona de captura da cava contém a pluma num horizonte de 100 anos.</p>
+
+        <h2 data-en="Approach" data-pt="Abordagem">Abordagem</h2>
+        <p data-en="A coupled MODFLOW 6 groundwater flow + GWT transport model (158 × 153 cells, 100 m) was built for the site. The model simulates:" data-pt="Um modelo acoplado MODFLOW 6 fluxo de águas subterrâneas + GWT transporte (158 × 153 células, 100 m) foi construído para o site. O modelo simula:">Um modelo acoplado MODFLOW 6 fluxo de águas subterrâneas + GWT transporte (158 × 153 células, 100 m) foi construído para o site. O modelo simula:</p>
+        <ul>
+            <li data-en="Steady-state groundwater flow in 3 hydrostratigraphic layers (Kalahari sands, weathered Ecca, fresh Ecca) with the Zoetfontein fault zone" data-pt="Fluxo de águas subterrâneas em regime permanente em 3 camadas hidroestratigráficas (areias Kalahari, Ecca alterada, Ecca fresca) com a zona de falha Zoetfontein">Fluxo de águas subterrâneas em regime permanente em 3 camadas hidroestratigráficas (areias Kalahari, Ecca alterada, Ecca fresca) com a zona de falha Zoetfontein</li>
+            <li data-en="Sulphate release from the waste-rock dump (1,200 mg/L source term) with sorptive transport (Kd 0.01 L/kg)" data-pt="Liberação de sulfato da pilha de estéril (fonte de 1.200 mg/L) com transporte sorptivo (Kd 0,01 L/kg)">Liberação de sulfato da pilha de estéril (fonte de 1.200 mg/L) com transporte sorptivo (Kd 0,01 L/kg)</li>
+            <li data-en="Pit dewatering via drain cells (494 cells), river and regional-head boundaries" data-pt="Drenagem da cava via células de dreno (494 células), fronteiras de rio e carga regional">Drenagem da cava via células de dreno (494 células), fronteiras de rio e carga regional</li>
+            <li data-en="Drawdown-based capture zone delineation with Darcy velocity travel times to the pit" data-pt="Delineamento da zona de captura por rebaixamento com tempos de trânsito de velocidade de Darcy até à cava">Delineamento da zona de captura por rebaixamento com tempos de trânsito de velocidade de Darcy até à cava</li>
+        </ul>
+
+        <h2 data-en="Results" data-pt="Resultados">Resultados</h2>
+        <ul>
+            <li data-en="Pit inflow of 4.8k m³/day sustains a maximum drawdown of 42 m — the basis for dewatering bore design" data-pt="Infiltração na cava de 4.8 mil m³/dia sustenta um rebaixamento máximo de 42 m — base para o dimensionamento dos poços de desaguamento">Infiltração na cava de 4.8 mil m³/dia sustenta um rebaixamento máximo de 42 m — base para o dimensionamento dos poços de desaguamento</li>
+            <li data-en="Capture zone of 4.1 km² (radius ~2.3 km) — the pit acts as a hydraulic containment for the SO₄ plume" data-pt="Zona de captura de 4,1 km² (raio ~2,3 km) — a cava actua como contenção hidráulica da pluma de SO₄">Zona de captura de 4,1 km² (raio ~2,3 km) — a cava actua como contenção hidráulica da pluma de SO₄</li>
+            <li data-en="At 100 years, the sorptive SO₄ plume remains within the capture zone footprint — hydraulic containment is effective" data-pt="Aos 100 anos, a pluma sorptiva de SO₄ permanece dentro da zona de captura — a contenção hidráulica é eficaz">Aos 100 anos, a pluma sorptiva de SO₄ permanece dentro da zona de captura — a contenção hidráulica é eficaz</li>
+            <li data-en="Water budget: recharge supplies 59% of aquifer inflow, rivers 41% — pit drain is the dominant sink" data-pt="Balanço hídrico: recarga fornece 59% da entrada no aquífero, rios 41% — a drenagem da cava é o sumidouro dominante">Balanço hídrico: recarga fornece 59% da entrada no aquífero, rios 41% — a drenagem da cava é o sumidouro dominante</li>
+        </ul>
+
+        <h3 data-en="Deliverable sheet" data-pt="Folha de entrega">Folha de entrega</h3>
+        <figure style="margin: 1.5rem 0;">
+            <img src="/estudos/img/modflow/OpenPitGW_Signature_PT.png"
+                 data-pt-src="/estudos/img/modflow/OpenPitGW_Signature_PT.png"
+                 data-en-src="/estudos/img/modflow/OpenPitGW_Signature_EN.png"
+                 alt="Engineering sheet — MODFLOW 6 pit dewatering and SO₄ plume, open-pit mine"
+                 style="width: 100%; border-radius: 8px; border: 1px solid var(--c-border);">
+            <figcaption style="text-align: center; color: var(--c-text-light); font-size: 0.9rem; margin-top: 0.5rem;" data-en="Synthesis sheet: layer-1 piezometry, 100-year SO₄ plume, pit footprint and piezometer network over terrain; key metrics, model parameters and water budget. Full-resolution file available to clients." data-pt="Folha de síntese: piezometria da camada 1, pluma de SO₄ aos 100 anos, footprint da cava e rede de piezômetros sobre o terreno; métricas-chave, parâmetros do modelo e balanço hídrico. Ficheiro em resolução total disponível a clientes.">Folha de síntese: piezometria da camada 1, pluma de SO₄ aos 100 anos, footprint da cava e rede de piezômetros sobre o terreno; métricas-chave, parâmetros do modelo e balanço hídrico. Ficheiro em resolução total disponível a clientes.</figcaption>
+        </figure>
+
+        <h3 data-en="Model output — groundwater flow and head distribution" data-pt="Saída do modelo — fluxo de águas subterrâneas e distribuição de carga">Saída do modelo — fluxo de águas subterrâneas e distribuição de carga</h3>
+        <img src="/estudos/img/tutorials/tutorial01_results.png" alt="MODFLOW groundwater flow results" style="width: 100%; border-radius: 8px; margin: 1rem 0; box-shadow: var(--shadow-md);">
+        <p style="font-size: 0.85rem; color: var(--c-text-light); text-align: center; margin-bottom: 1.5rem;" data-en="MODFLOW 6 head distribution and flow vectors for the model domain." data-pt="Distribuição de carga e vetores de fluxo MODFLOW 6 para o domínio do modelo.">Distribuição de carga e vetores de fluxo MODFLOW 6 para o domínio do modelo.</p>
+
+        <h3 data-en="Model output — transport with sorption" data-pt="Saída do modelo — transporte com sorção">Saída do modelo — transporte com sorção</h3>
+        <img src="/estudos/img/tutorials/tutorial02_results.png" alt="MODFLOW transport results with sorption" style="width: 100%; border-radius: 8px; margin: 1rem 0; box-shadow: var(--shadow-md);">
+        <p style="font-size: 0.85rem; color: var(--c-text-light); text-align: center; margin-bottom: 1.5rem;" data-en="MT3DMS concentration distribution showing the effect of sorption on plume extent." data-pt="Distribuição de concentração MT3DMS mostrando o efeito da sorção na extensão da pluma.">Distribuição de concentração MT3DMS mostrando o efeito da sorção na extensão da pluma.</p>
+
+        <h2 data-en="What this means for clients" data-pt="O que isso significa para clientes">O que isso significa para clientes</h2>
+        <ul>
+            <li data-en="Quantifies whether natural attenuation is sufficient or active remediation is required" data-pt="Quantifica se a atenuação natural é suficiente ou se remediação ativa é necessária">Quantifica se a atenuação natural é suficiente ou se remediação ativa é necessária</li>
+            <li data-en="Provides defensible, model-based evidence for environmental impact assessments (EIA/RIMA)" data-pt="Fornece evidência baseada em modelo e defensável para avaliações de impacto ambiental (EIA/RIMA)">Fornece evidência baseada em modelo e defensável para avaliações de impacto ambiental (EIA/RIMA)</li>
+            <li data-en="Identifies the time horizon within which action must be taken before the plume reaches a boundary" data-pt="Identifica o horizonte de tempo dentro do qual a ação deve ser tomada antes que a pluma atinja um limite">Identifica o horizonte de tempo dentro do qual a ação deve ser tomada antes que a pluma atinja um limite</li>
+        </ul>
+
+        <h2 data-en="Data sources" data-pt="Fontes de dados">Fontes de dados</h2>
+        <ul>
+            <li><strong>Flow model:</strong> <span data-en="MODFLOW 6 — steady-state, 3 layers, 158 × 153 grid" data-pt="MODFLOW 6 — regime permanente, 3 camadas, grelha 158 × 153">MODFLOW 6 — regime permanente, 3 camadas, grelha 158 × 153</span></li>
+            <li><strong>Transport model:</strong> <span data-en="MODFLOW 6 GWT — 100-year SO₄ simulation, Kd 0.01 L/kg" data-pt="MODFLOW 6 GWT — simulação SO₄ de 100 anos, Kd 0,01 L/kg">MODFLOW 6 GWT — simulação SO₄ de 100 anos, Kd 0,01 L/kg</span></li>
+            <li><strong>Analysis tools:</strong> <span data-en="MODPATH capture zone, ZONEBUDGET water budget, borehole piezometry calibration" data-pt="Zona de captura MODPATH, balanço hídrico ZONEBUDGET, calibração por piezometria de furos">Zona de captura MODPATH, balanço hídrico ZONEBUDGET, calibração por piezometria de furos</span></li>
+        </ul>
+
+        <blockquote data-en="Demonstration study using representative parameters. The same modeling workflow applies to client site data, calibrated to field-measured hydraulic conductivities and sorption coefficients." data-pt="Estudo demonstrativo usando parâmetros representativos. O mesmo fluxo de modelagem se aplica aos dados do site do cliente, calibrado a condutividades hidráulicas medidas em campo e coeficientes de sorção.">Estudo demonstrativo usando parâmetros representativos. O mesmo fluxo de modelagem se aplica aos dados do site do cliente, calibrado a condutividades hidráulicas medidas em campo e coeficientes de sorção.</blockquote>
+
+        <div class="study-nav">
+            <a href="/estudos/n1-drenagem" data-en="← N1 Drainage Screening" data-pt="← Rastreamento N1">← Rastreamento N1</a>
+            <a href="/estudos/ruptura-barragem" data-en="Dam Break Simulation →" data-pt="Ruptura de Barragem →">Ruptura de Barragem →</a>
+        </div>
+    </article>
+
+</main>
+{{> footer}}
+</body>
+</html>

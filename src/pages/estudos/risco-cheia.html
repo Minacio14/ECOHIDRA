@@ -1,0 +1,140 @@
+<!--@title Mapeamento de risco de cheia — Bacia do Rovubué-->
+<!--@desc Return period flood hazard mapping in the Rovubue Basin (Mozambique) — flood lines for TR5–TR100 design storms using HEC-HMS rainfall-runoff transformation and 2D flood routing on Copernicus DEM.-->
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+{{> head}}
+</head>
+<body>
+{{> nav}}
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" data-en="Case study" data-pt="Estudo">Estudo</span>
+    <h1 data-en="Flood hazard mapping — Rovubue Basin" data-pt="Mapeamento de risco de cheia — Bacia do Rovubué">Mapeamento de risco de cheia — Bacia do Rovubué</h1>
+    <p data-en="Return period flood lines (TR5–TR100) from design rainfall, SCS-CN rainfall-runoff transformation, and 2D flood routing on Copernicus DEM — 16,347 km² basin in Tete province, Mozambique" data-pt="Linhas de cheia por período de retorno (TR5–TR100) a partir de chuva de projeto, transformação chuva-vazão SCS-CN e roteamento de cheia 2D no Copernicus DEM — bacia de 16.347 km² na província de Tete, Moçambique">Linhas de cheia por período de retorno (TR5–TR100) a partir de chuva de projeto, transformação chuva-vazão SCS-CN e roteamento de cheia 2D no Copernicus DEM — bacia de 16.347 km² na província de Tete, Moçambique</p>
+  </div>
+</section>
+
+<article class="study-article">
+        <div class="study-meta">
+            <span class="tag" data-en="Flood Hazard" data-pt="Risco de Cheia">Risco de Cheia</span>
+            <span>2026</span>
+            <span>&bull;</span>
+            <span data-en="Demonstration study — public data" data-pt="Estudo demonstrativo — dados públicos">Estudo demonstrativo — dados públicos</span>
+        </div>
+
+        <h2 data-en="Context" data-pt="Contexto">Contexto</h2>
+        <p data-en="The Rovubue River basin covers 16,347 km² in Tete province, central Mozambique. The region experiences seasonal flooding during the November–March wet season, with cyclone-driven events causing rapid inundation of the river floodplain. Flood hazard mapping establishes the extent of inundation for design storms of different return periods — the fundamental input for land-use planning, infrastructure siting, and emergency response planning." data-pt="A bacia do Rio Rovubué cobre 16.347 km² na província de Tete, centro de Moçambique. A região sofre inundações sazonais durante a estação chuvosa de novembro a março, com eventos ciclônicos causando alagamento rápido da planície de inundação do rio. O mapeamento de risco de cheia estabelece a extensão da inundação para chuvas de projeto de diferentes períodos de retorno — a entrada fundamental para planejamento de uso do solo, localização de infraestrutura e planejamento de resposta a emergências.">A bacia do Rio Rovubué cobre 16.347 km² na província de Tete, centro de Moçambique. A região sofre inundações sazonais durante a estação chuvosa de novembro a março, com eventos ciclônicos causando alagamento rápido da planície de inundação do rio. O mapeamento de risco de cheia estabelece a extensão da inundação para chuvas de projeto de diferentes períodos de retorno — a entrada fundamental para planejamento de uso do solo, localização de infraestrutura e planejamento de resposta a emergências.</p>
+
+        <h2 data-en="Data sources" data-pt="Fontes de dados">Fontes de dados</h2>
+        <ul>
+            <li><strong data-en="Copernicus GLO-30 DEM:" data-pt="Copernicus GLO-30 DEM:">Copernicus GLO-30 DEM:</strong> <span data-en="30m resolution digital elevation model, downloaded via OpenTopography API — used for terrain analysis and 2D flood routing" data-pt="Modelo digital de elevação com 30m de resolução, baixado via API OpenTopography — usado para análise de terreno e roteamento de cheia 2D">Modelo digital de elevação com 30m de resolução, baixado via API OpenTopography — usado para análise de terreno e roteamento de cheia 2D</span></li>
+            <li><strong data-en="HydroSHEDS stream network:" data-pt="Rede de drenagem HydroSHEDS:">Rede de drenagem HydroSHEDS:</strong> <span data-en="175 stream segments with Strahler order classification — used for channel identification and flood routing" data-pt="175 segmentos de rio com classificação de ordem Strahler — usados para identificação de canais e roteamento de cheia">175 segmentos de rio com classificação de ordem Strahler — usados para identificação de canais e roteamento de cheia</span></li>
+            <li><strong data-en="CHIRPS rainfall (Google Earth Engine):" data-pt="Chuva CHIRPS (Google Earth Engine):">Chuva CHIRPS (Google Earth Engine):</strong> <span data-en="44-year annual-maximum record (1981–2024) fitted with a Gumbel distribution — 24-hour design rainfall for TR5, TR10, TR25, TR50 and TR100" data-pt="Série de máximos anuais de 44 anos (1981–2024) ajustada à distribuição de Gumbel — chuva de projecto de 24 horas para TR5, TR10, TR25, TR50 e TR100">Série de máximos anuais de 44 anos (1981–2024) ajustada à distribuição de Gumbel — chuva de projecto de 24 horas para TR5, TR10, TR25, TR50 e TR100</span></li>
+            <li><strong data-en="OpenStreetMap waterways:" data-pt="Hidrografia OpenStreetMap:">Hidrografia OpenStreetMap:</strong> <span data-en="Named rivers and waterways extracted via Overpass API" data-pt="Rios nomeados e vias navegáveis extraídos via Overpass API">Rios nomeados e vias navegáveis extraídos via Overpass API</span></li>
+        </ul>
+
+        <h2 data-en="Approach" data-pt="Abordagem">Abordagem</h2>
+        <p data-en="The workflow follows the standard flood hazard mapping methodology used by HEC-HMS for rainfall-runoff transformation and HEC-RAS for hydraulic routing:" data-pt="O fluxo de trabalho segue a metodologia padrão de mapeamento de risco de cheia usada pelo HEC-HMS para transformação chuva-vazão e HEC-RAS para roteamento hidráulico:">O fluxo de trabalho segue a metodologia padrão de mapeamento de risco de cheia usada pelo HEC-HMS para transformação chuva-vazão e HEC-RAS para roteamento hidráulico:</p>
+        <ul>
+            <li data-en="Design rainfall depths for 24-hour storms at five return periods (TR5, TR10, TR25, TR50, TR100) from the CHIRPS Gumbel fit" data-pt="Profundidades de chuva de projeto para tempestades de 24 horas em cinco períodos de retorno (TR5, TR10, TR25, TR50, TR100) do ajuste Gumbel à série CHIRPS">Profundidades de chuva de projeto para tempestades de 24 horas em cinco períodos de retorno (TR5, TR10, TR25, TR50, TR100) do ajuste Gumbel à série CHIRPS</li>
+            <li data-en="SCS-CN rainfall-runoff transformation with spatially-varying Curve Number from GCN250 (basin mean ≈ 77) to convert design rainfall into excess rainfall (runoff)" data-pt="Transformação chuva-vazão SCS-CN com Número de Curva espacialmente variável do GCN250 (média da bacia ≈ 77) para converter chuva de projeto em chuva excedente (escorrimento)">Transformação chuva-vazão SCS-CN com Número de Curva espacialmente variável do GCN250 (média da bacia ≈ 77) para converter chuva de projeto em chuva excedente (escorrimento)</li>
+            <li data-en="SCS dimensionless unit hydrograph transform (time of concentration = 12h for the 16,347 km² basin) to produce design flood hydrographs at the basin outlet" data-pt="Transformação hidrograma unitário adimensional SCS (tempo de concentração = 12h para a bacia de 16.347 km²) para produzir hidrogramas de cheia de projeto na saída da bacia">Transformação hidrograma unitário adimensional SCS (tempo de concentração = 12h para a bacia de 16.347 km²) para produzir hidrogramas de cheia de projeto na saída da bacia</li>
+            <li data-en="2D flood routing on the Copernicus DEM using a water-surface-elevation (WSE) volume-spreading model — the flood hydrograph is routed through the river valley, with the water surface elevation decreasing with distance from the outlet" data-pt="Roteamento de cheia 2D no Copernicus DEM usando um modelo de espalhamento de volume por elevação de superfície de água (WSE) — o hidrograma de cheia é roteado através do vale do rio, com a elevação da superfície de água diminuindo com a distância da saída">Roteamento de cheia 2D no Copernicus DEM usando um modelo de espalhamento de volume por elevação de superfície de água (WSE) — o hidrograma de cheia é roteado através do vale do rio, com a elevação da superfície de água diminuindo com a distância da saída</li>
+            <li data-en="Flood depth at each cell computed as the maximum water surface elevation minus the ground elevation, producing inundation depth maps and flood line contours for each return period" data-pt="Profundidade de cheia em cada célula computada como a elevação máxima da superfície de água menos a elevação do terreno, produzindo mapas de profundidade de inundação e contornos de linha de cheia para cada período de retorno">Profundidade de cheia em cada célula computada como a elevação máxima da superfície de água menos a elevação do terreno, produzindo mapas de profundidade de inundação e contornos de linha de cheia para cada período de retorno</li>
+        </ul>
+
+        <h2 data-en="Results" data-pt="Resultados">Resultados</h2>
+        <ul>
+            <li><strong>TR5 (1:5 years):</strong> <span data-en="56 mm design rainfall, peak discharge 5,728 m³/s, inundated area 660 km²" data-pt="56 mm de chuva de projeto, vazão de pico 5.728 m³/s, área inundada 660 km²">56 mm de chuva de projeto, vazão de pico 5.728 m³/s, área inundada 660 km²</span></li>
+            <li><strong>TR10 (1:10 years):</strong> <span data-en="62 mm design rainfall, peak discharge 6,946 m³/s, inundated area 667 km²" data-pt="62 mm de chuva de projeto, vazão de pico 6.946 m³/s, área inundada 667 km²">62 mm de chuva de projeto, vazão de pico 6.946 m³/s, área inundada 667 km²</span></li>
+            <li><strong>TR25 (1:25 years):</strong> <span data-en="68 mm design rainfall, peak discharge 8,568 m³/s, inundated area 676 km²" data-pt="68 mm de chuva de projeto, vazão de pico 8.568 m³/s, área inundada 676 km²">68 mm de chuva de projeto, vazão de pico 8.568 m³/s, área inundada 676 km²</span></li>
+            <li><strong>TR50 (1:50 years):</strong> <span data-en="73 mm design rainfall, peak discharge 9,824 m³/s, inundated area 682 km²" data-pt="73 mm de chuva de projeto, vazão de pico 9.824 m³/s, área inundada 682 km²">73 mm de chuva de projeto, vazão de pico 9.824 m³/s, área inundada 682 km²</span></li>
+            <li><strong>TR100 (1:100 years):</strong> <span data-en="78 mm design rainfall, peak discharge 11,109 m³/s, inundated area 688 km²" data-pt="78 mm de chuva de projeto, vazão de pico 11.109 m³/s, área inundada 688 km²">78 mm de chuva de projeto, vazão de pico 11.109 m³/s, área inundada 688 km²</span></li>
+        </ul>
+
+        <h2 data-en="Figures" data-pt="Figuras">Figuras</h2>
+
+        <h3 data-en="Deliverable sheet" data-pt="Folha de entrega">Folha de entrega</h3>
+        <figure style="margin: 1.5rem 0;">
+            <img src="/estudos/img/flood-mapping/Rovubue_Signature_PT.png"
+                 data-pt-src="/estudos/img/flood-mapping/Rovubue_Signature_PT.png"
+                 data-en-src="/estudos/img/flood-mapping/Rovubue_Signature_EN.png"
+                 alt="Engineering sheet — Rovubue basin flood hazard mapping, TR100"
+                 style="width: 100%; border-radius: 8px; border: 1px solid var(--c-border);">
+            <figcaption style="text-align: center; color: var(--c-text-light); font-size: 0.9rem; margin-top: 0.5rem;" data-en="Synthesis sheet: TR100 inundation depth over terrain with basin boundary; key metrics, return-period table and methodology summary. Full-resolution file available to clients." data-pt="Folha de síntese: profundidade de inundação TR100 sobre o terreno com o limite da bacia; métricas-chave, tabela de períodos de retorno e resumo metodológico. Ficheiro em resolução total disponível a clientes.">Folha de síntese: profundidade de inundação TR100 sobre o terreno com o limite da bacia; métricas-chave, tabela de períodos de retorno e resumo metodológico. Ficheiro em resolução total disponível a clientes.</figcaption>
+        </figure>
+
+
+        <h3 data-en="Study area" data-pt="Área de estudo">Área de estudo</h3>
+        <figure style="margin: 1.5rem 0;">
+            <img src="/estudos/img/flood-mapping/fig1_study_area.png" alt="Rovubue Basin study area — DEM, streams, and basin outlet" style="width: 100%; border-radius: 8px; border: 1px solid var(--c-border);">
+            <figcaption style="text-align: center; color: var(--c-text-light); font-size: 0.9rem; margin-top: 0.5rem;" data-en="Figure 1: Rovubue Basin — Copernicus GLO-30 DEM (~90m), HydroSHEDS stream network (175 segments), OSM named waterways, and basin outlet (red triangle). Basin area: 16,347 km² in Tete province, Mozambique." data-pt="Figura 1: Bacia do Rovubué — Copernicus GLO-30 DEM (~90m), rede de drenagem HydroSHEDS (175 segmentos), hidrografia nomeada do OSM e saída da bacia (triângulo vermelho). Área da bacia: 16.347 km² na província de Tete, Moçambique.">Figura 1: Bacia do Rovubué — Copernicus GLO-30 DEM (~90m), rede de drenagem HydroSHEDS (175 segmentos), hidrografia nomeada do OSM e saída da bacia (triângulo vermelho). Área da bacia: 16.347 km² na província de Tete, Moçambique.</figcaption>
+        </figure>
+
+        <h3 data-en="Design rainfall and flood hydrographs" data-pt="Chuva de projeto e hidrogramas de cheia">Chuva de projeto e hidrogramas de cheia</h3>
+        <figure style="margin: 1.5rem 0;">
+            <img src="/estudos/img/flood-mapping/fig2_rainfall_hydrographs.png" alt="Design rainfall depths and SCS-CN flood hydrographs for TR5, TR10, TR50, TR100" style="width: 100%; border-radius: 8px; border: 1px solid var(--c-border);">
+            <figcaption style="text-align: center; color: var(--c-text-light); font-size: 0.9rem; margin-top: 0.5rem;" data-en="Figure 2: Left — 24-hour design rainfall depths (blue) and SCS-CN excess rainfall (orange) for four return periods. Right — design flood hydrographs from SCS unit hydrograph transform, showing peak discharges from 5,728 m³/s (TR5) to 11,109 m³/s (TR100)." data-pt="Figura 2: Esquerda — profundidades de chuva de projeto de 24 horas (azul) e chuva excedente SCS-CN (laranja) para quatro períodos de retorno. Direita — hidrogramas de cheia de projeto da transformação do hidrograma unitário SCS, mostrando vazões de pico de 5.728 m³/s (TR5) a 11.109 m³/s (TR100).">Figura 2: Esquerda — profundidades de chuva de projeto de 24 horas (azul) e chuva excedente SCS-CN (laranja) para quatro períodos de retorno. Direita — hidrogramas de cheia de projeto da transformação do hidrograma unitário SCS, mostrando vazões de pico de 5.728 m³/s (TR5) a 11.109 m³/s (TR100).</figcaption>
+        </figure>
+
+        <h3 data-en="Flood lines — all return periods" data-pt="Linhas de cheia — todos os períodos de retorno">Linhas de cheia — todos os períodos de retorno</h3>
+        <figure style="margin: 1.5rem 0;">
+            <img src="/estudos/img/flood-mapping/fig3_flood_lines.png" alt="Flood hazard map showing flood lines for TR5, TR10, TR50, and TR100 overlaid on the DEM" style="width: 100%; border-radius: 8px; border: 1px solid var(--c-border);">
+            <figcaption style="text-align: center; color: var(--c-text-light); font-size: 0.9rem; margin-top: 0.5rem;" data-en="Figure 3: Flood hazard map — flood line contours for each return period overlaid on the Copernicus DEM. Blue = TR5 (660 km²), green = TR10 (667 km²), orange = TR50 (682 km²), red = TR100 (688 km²). The progressive expansion of the flood extent from frequent to extreme events is clearly visible along the main river valley." data-pt="Figura 3: Mapa de risco de cheia — contornos de linha de cheia para cada período de retorno sobrepostos ao Copernicus DEM. Azul = TR5 (660 km²), verde = TR10 (667 km²), laranja = TR50 (682 km²), vermelho = TR100 (688 km²). A expansão progressiva da extensão de cheia de eventos frequentes a extremos é claramente visível ao longo do vale do rio principal.">Figura 3: Mapa de risco de cheia — contornos de linha de cheia para cada período de retorno sobrepostos ao Copernicus DEM. Azul = TR5 (660 km²), verde = TR10 (667 km²), laranja = TR50 (682 km²), vermelho = TR100 (688 km²). A expansão progressiva da extensão de cheia de eventos frequentes a extremos é claramente visível ao longo do vale do rio principal.</figcaption>
+        </figure>
+
+        <h3 data-en="TR100 inundation depth" data-pt="Profundidade de inundação TR100">Profundidade de inundação TR100</h3>
+        <figure style="margin: 1.5rem 0;">
+            <img src="/estudos/img/flood-mapping/fig4_tr100_depth.png" alt="TR100 flood inundation depth map — 1:100 year return period" style="width: 100%; border-radius: 8px; border: 1px solid var(--c-border);">
+            <figcaption style="text-align: center; color: var(--c-text-light); font-size: 0.9rem; margin-top: 0.5rem;" data-en="Figure 4: TR100 (1:100 year) inundation depth map — peak discharge 11,109 m³/s, inundated area 688 km², depths exceeding 15 m along the main channel. Color scale from blue (shallow) to red (deep). The basin outlet is marked with a red triangle." data-pt="Figura 4: Mapa de profundidade de inundação TR100 (1:100 anos) — vazão de pico 11.109 m³/s, área inundada 688 km², profundidades superiores a 15 m ao longo do canal principal. Escala de cores de azul (raso) a vermelho (profundo). A saída da bacia é marcada com um triângulo vermelho.">Figura 4: Mapa de profundidade de inundação TR100 (1:100 anos) — vazão de pico 11.109 m³/s, área inundada 688 km², profundidades superiores a 15 m ao longo do canal principal. Escala de cores de azul (raso) a vermelho (profundo). A saída da bacia é marcada com um triângulo vermelho.</figcaption>
+        </figure>
+
+        <h3 data-en="Return period comparison" data-pt="Comparação de períodos de retorno">Comparação de períodos de retorno</h3>
+        <figure style="margin: 1.5rem 0;">
+            <img src="/estudos/img/flood-mapping/fig5_return_period_comparison.png" alt="Side-by-side comparison of inundation extent for TR5, TR10, TR50, and TR100" style="width: 100%; border-radius: 8px; border: 1px solid var(--c-border);">
+            <figcaption style="text-align: center; color: var(--c-text-light); font-size: 0.9rem; margin-top: 0.5rem;" data-en="Figure 5: Inundation extent comparison — TR5 (660 km²), TR10 (667 km²), TR25 (676 km²), TR50 (682 km²), TR100 (688 km²). The progressive increase in flooded area and depth with return period is evident, supporting land-use zoning and infrastructure setback decisions." data-pt="Figura 5: Comparação de extensão de inundação — TR5 (660 km²), TR10 (667 km²), TR25 (676 km²), TR50 (682 km²), TR100 (688 km²). O aumento progressivo de área inundada e profundidade com o período de retorno é evidente, apoiando zoneamento de uso do solo e decisões de recuo de infraestrutura.">Figura 5: Comparação de extensão de inundação — TR5 (660 km²), TR10 (667 km²), TR25 (676 km²), TR50 (682 km²), TR100 (688 km²). O aumento progressivo de área inundada e profundidade com o período de retorno é evidente, apoiando zoneamento de uso do solo e decisões de recuo de infraestrutura.</figcaption>
+        </figure>
+
+        <h3 data-en="Flood depth profile along main river" data-pt="Perfil de profundidade de cheia ao longo do rio principal">Perfil de profundidade de cheia ao longo do rio principal</h3>
+        <figure style="margin: 1.5rem 0;">
+            <img src="/estudos/img/flood-mapping/fig6_river_profile.png" alt="Longitudinal flood depth profile along the main river for all return periods" style="width: 100%; border-radius: 8px; border: 1px solid var(--c-border);">
+            <figcaption style="text-align: center; color: var(--c-text-light); font-size: 0.9rem; margin-top: 0.5rem;" data-en="Figure 6: Flood depth profile along the main river — ground elevation (black line) with water surface elevation for each return period (colored fills). The profile shows how flood depth decreases with distance upstream from the basin outlet, and how higher return periods produce both deeper and more extensive inundation." data-pt="Figura 6: Perfil de profundidade de cheia ao longo do rio principal — elevação do terreno (linha preta) com elevação da superfície de água para cada período de retorno (preenchimentos coloridos). O perfil mostra como a profundidade de cheia diminui com a distância a montante da saída da bacia, e como períodos de retorno mais altos produzem inundação mais profunda e extensa.">Figura 6: Perfil de profundidade de cheia ao longo do rio principal — elevação do terreno (linha preta) com elevação da superfície de água para cada período de retorno (preenchimentos coloridos). O perfil mostra como a profundidade de cheia diminui com a distância a montante da saída da bacia, e como períodos de retorno mais altos produzem inundação mais profunda e extensa.</figcaption>
+        </figure>
+
+        <h3 data-en="Summary table" data-pt="Tabela resumo">Tabela resumo</h3>
+        <figure style="margin: 1.5rem 0;">
+            <img src="/estudos/img/flood-mapping/fig7_summary_table.png" alt="Summary table of flood hazard mapping results for all return periods" style="width: 100%; border-radius: 8px; border: 1px solid var(--c-border);">
+            <figcaption style="text-align: center; color: var(--c-text-light); font-size: 0.9rem; margin-top: 0.5rem;" data-en="Figure 7: Summary table — design rainfall, excess rainfall, peak discharge, inundated area, and maximum depth for each return period (TR5, TR10, TR50, TR100)." data-pt="Figura 7: Tabela resumo — chuva de projeto, chuva excedente, vazão de pico, área inundada e profundidade máxima para cada período de retorno (TR5, TR10, TR50, TR100).">Figura 7: Tabela resumo — chuva de projeto, chuva excedente, vazão de pico, área inundada e profundidade máxima para cada período de retorno (TR5, TR10, TR50, TR100).</figcaption>
+        </figure>
+
+        <h2 data-en="Applications" data-pt="Aplicações">Aplicações</h2>
+        <ul>
+            <li data-en="Land-use zoning — flood lines define building setback distances for each return period, supporting municipal planning regulations" data-pt="Zoneamento de uso do solo — linhas de cheia definem distâncias de recuo de construção para cada período de retorno, apoiando regulamentos de planejamento municipal">Zoneamento de uso do solo — linhas de cheia definem distâncias de recuo de construção para cada período de retorno, apoiando regulamentos de planejamento municipal</li>
+            <li data-en="Infrastructure siting — roads, bridges, and buildings can be located outside the TR100 flood line, with design flood levels for hydraulic structure design" data-pt="Localização de infraestrutura — estradas, pontes e edifícios podem ser localizados fora da linha de cheia TR100, com níveis de cheia de projeto para dimensionamento de estruturas hidráulicas">Localização de infraestrutura — estradas, pontes e edifícios podem ser localizados fora da linha de cheia TR100, com níveis de cheia de projeto para dimensionamento de estruturas hidráulicas</li>
+            <li data-en="Emergency response planning — arrival time maps support evacuation route design and emergency shelter siting" data-pt="Planejamento de resposta a emergências — mapas de tempo de chegada apoiam dimensionamento de rotas de evacuação e localização de abrigos de emergência">Planejamento de resposta a emergências — mapas de tempo de chegada apoiam dimensionamento de rotas de evacuação e localização de abrigos de emergência</li>
+            <li data-en="Flood insurance assessment — return period depth maps support risk-based insurance premium calculation" data-pt="Avaliação de seguro de inundação — mapas de profundidade por período de retorno apoiam cálculo de prêmios de seguro baseados em risco">Avaliação de seguro de inundação — mapas de profundidade por período de retorno apoiam cálculo de prêmios de seguro baseados em risco</li>
+        </ul>
+
+        <h2 data-en="Tools used" data-pt="Ferramentas utilizadas">Ferramentas utilizadas</h2>
+        <ul>
+            <li><strong data-en="HEC-HMS methodology:" data-pt="Metodologia HEC-HMS:">Metodologia HEC-HMS:</strong> <span data-en="SCS-CN rainfall-runoff transformation and SCS dimensionless unit hydrograph — the same methods used by HEC-HMS for design flood hydrograph generation" data-pt="Transformação chuva-vazão SCS-CN e hidrograma unitário adimensional SCS — os mesmos métodos usados pelo HEC-HMS para geração de hidrogramas de cheia de projeto">Transformação chuva-vazão SCS-CN e hidrograma unitário adimensional SCS — os mesmos métodos usados pelo HEC-HMS para geração de hidrogramas de cheia de projeto</span></li>
+            <li><strong data-en="Copernicus GLO-30 DEM:" data-pt="Copernicus GLO-30 DEM:">Copernicus GLO-30 DEM:</strong> <span data-en="30m resolution digital elevation model via OpenTopography API — terrain analysis and 2D flood routing" data-pt="Modelo digital de elevação com 30m de resolução via API OpenTopography — análise de terreno e roteamento de cheia 2D">Modelo digital de elevação com 30m de resolução via API OpenTopography — análise de terreno e roteamento de cheia 2D</span></li>
+            <li><strong data-en="HydroSHEDS:" data-pt="HydroSHEDS:">HydroSHEDS:</strong> <span data-en="Stream network and basin delineation" data-pt="Rede de drenagem e delineação de bacia">Rede de drenagem e delineação de bacia</span></li>
+            <li><strong data-en="CHIRPS + Gumbel:" data-pt="CHIRPS + Gumbel:">CHIRPS + Gumbel:</strong> <span data-en="Design rainfall from the 44-year CHIRPS annual-maximum series via Google Earth Engine, fitted with a Gumbel distribution" data-pt="Chuva de projeto da série de máximos anuais CHIRPS de 44 anos via Google Earth Engine, ajustada à distribuição de Gumbel">Chuva de projeto da série de máximos anuais CHIRPS de 44 anos via Google Earth Engine, ajustada à distribuição de Gumbel</span></li>
+        </ul>
+
+        <blockquote data-en="The same methodology applies to client projects with site-specific data — calibrated curve numbers from field verification, surveyed cross-sections for hydraulic routing, and design rainfall from local rain gauge records produce a site-specific flood hazard study ready for regulatory submission." data-pt="A mesma metodologia se aplica a projetos de cliente com dados específicos do site — números de curva calibrados por verificação de campo, seções transversais levantadas para roteamento hidráulico, e chuva de projeto de registros locais de pluviômetros produzem um estudo de risco de cheia específico do site pronto para submissão regulatória.">A mesma metodologia se aplica a projetos de cliente com dados específicos do site — números de curva calibrados por verificação de campo, seções transversais levantadas para roteamento hidráulico, e chuva de projeto de registros locais de pluviômetros produzem um estudo de risco de cheia específico do site pronto para submissão regulatória.</blockquote>
+
+        <div class="study-nav">
+            <a href="/estudos/ruptura-barragem" data-en="← Dam Break Simulation" data-pt="← Ruptura de Barragem">← Ruptura de Barragem</a>
+            <a href="/estudos" data-en="All case studies →" data-pt="Todos os cases →">Todos os cases →</a>
+        </div>
+    </article>
+
+</main>
+{{> footer}}
+</body>
+</html>
