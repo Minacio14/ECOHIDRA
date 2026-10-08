@@ -1,0 +1,39 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="brand brand-light" aria-label="{{BRAND}}">{{> logo}}<span class="brand-word">{{BRAND}}</span></a>
+      <p class="footer-full" data-en="{{BRAND_FULL_EN}}" data-pt="{{BRAND_FULL_PT}}">{{BRAND_FULL_PT}}</p>
+      <p class="footer-note" data-en="Independent consulting in water resources and environment." data-pt="Consultoria independente em recursos hídricos e ambiente.">Consultoria independente em recursos hídricos e ambiente.</p>
+    </div>
+    <div>
+      <h4 data-en="Pages" data-pt="Páginas">Páginas</h4>
+      <ul>
+        <li><a href="/servicos" data-en="Services" data-pt="Serviços">Serviços</a></li>
+        <li><a href="/estudos" data-en="Case studies" data-pt="Estudos">Estudos</a></li>
+        <li><a href="/sobre" data-en="About" data-pt="Sobre">Sobre</a></li>
+        <li><a href="/contacto" data-en="Contact" data-pt="Contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-en="Expertise" data-pt="Especialidades">Especialidades</h4>
+      <ul>
+        <li><a href="/servicos#hidrologia" data-en="Hydrology and floods" data-pt="Hidrologia e cheias">Hidrologia e cheias</a></li>
+        <li><a href="/servicos#drenagem" data-en="Drainage and hydraulic structures" data-pt="Drenagem e estruturas hidráulicas">Drenagem e estruturas hidráulicas</a></li>
+        <li><a href="/servicos#hidrogeologia" data-en="Hydrogeology" data-pt="Hidrogeologia">Hidrogeologia</a></li>
+        <li><a href="/servicos#ambiente" data-en="Environment and water quality" data-pt="Ambiente e qualidade da água">Ambiente e qualidade da água</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-en="Contact" data-pt="Contacto">Contacto</h4>
+      <ul>
+        <li><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></li>
+        <li>{{LOCATION}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>&copy; {{YEAR}} {{BRAND}} <span data-en="— independent consulting." data-pt="— consultoria independente.">— consultoria independente.</span></p>
+  </div>
+</footer>
+<script>window.SITE = { email: "{{EMAIL}}", whatsapp: "{{WHATSAPP_DIGITS}}", brand: "{{BRAND}}" };</script>
+<script src="/js/main.js"></script>

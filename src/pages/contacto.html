@@ -1,0 +1,63 @@
+<!--@title Contacto-->
+<!--@desc Pedir uma proposta ou discutir um projecto de hidrologia, drenagem, hidrogeologia ou ambiente. Resposta com uma primeira avaliação do que é viável.-->
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+{{> head}}
+</head>
+<body>
+{{> nav}}
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" data-en="Contact" data-pt="Contacto">Contacto</span>
+    <h1 data-en="Discuss a project" data-pt="Discutir um projecto">Discutir um projecto</h1>
+    <p data-en="Site coordinates can be shared for a rapid assessment, or project details for a tailored proposal." data-pt="Coordenadas do local podem ser partilhadas para uma avaliação rápida, ou detalhes do projecto para uma proposta à medida.">Coordenadas do local podem ser partilhadas para uma avaliação rápida, ou detalhes do projecto para uma proposta à medida.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:1.5rem">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <h2 data-en="Get in touch" data-pt="Entrar em contacto">Entrar em contacto</h2>
+      <p data-en="A short description of the water or environmental question, the location and the deadline is a good starting point. A first assessment of what is feasible follows." data-pt="Uma breve descrição da questão de água ou ambiente, da localização e do prazo é um bom ponto de partida. Segue-se uma primeira avaliação do que é viável.">Uma breve descrição da questão de água ou ambiente, da localização e do prazo é um bom ponto de partida. Segue-se uma primeira avaliação do que é viável.</p>
+      <div class="info-item"><div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div><div><strong>E-mail</strong><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></div></div>
+      <div class="info-item"><div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><strong data-en="Base" data-pt="Base">Base</strong><span data-en="{{LOCATION}} — serving Southern Africa remotely" data-pt="{{LOCATION}} — atendimento remoto em África Austral">{{LOCATION}} — atendimento remoto em África Austral</span></div></div>
+      <div class="info-item"><div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7 17.7 8.4a8 8 0 1 1-11.4 0Z"/></svg></div><div><strong data-en="Sectors" data-pt="Sectores">Sectores</strong><span data-en="Roads, railways, mining, energy, sanitation, environment" data-pt="Estradas, ferrovias, mineração, energia, saneamento, ambiente">Estradas, ferrovias, mineração, energia, saneamento, ambiente</span></div></div>
+    </div>
+
+    <form class="form-card reveal" id="contact-form">
+      <h2 data-en="Request a proposal" data-pt="Pedir proposta">Pedir proposta</h2>
+      <div class="form-row">
+        <div class="form-group"><label for="nome" data-en="Full name *" data-pt="Nome completo *">Nome completo *</label><input type="text" id="nome" name="nome" required autocomplete="name"></div>
+        <div class="form-group"><label for="email" data-en="E-mail *" data-pt="E-mail *">E-mail *</label><input type="email" id="email" name="email" required autocomplete="email"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label for="org" data-en="Organisation" data-pt="Organização">Organização</label><input type="text" id="org" name="org" autocomplete="organization"></div>
+        <div class="form-group"><label for="area" data-en="Area of interest *" data-pt="Área de interesse *">Área de interesse *</label>
+          <select id="area" name="area" required>
+            <option value="" data-en="Select…" data-pt="Seleccionar…">Seleccionar…</option>
+            <option value="Hidrologia e cheias" data-en="Hydrology and floods" data-pt="Hidrologia e cheias">Hidrologia e cheias</option>
+            <option value="Drenagem e estruturas hidráulicas" data-en="Drainage and hydraulic structures" data-pt="Drenagem e estruturas hidráulicas">Drenagem e estruturas hidráulicas</option>
+            <option value="Hidrogeologia" data-en="Hydrogeology" data-pt="Hidrogeologia">Hidrogeologia</option>
+            <option value="Água na mineração e na indústria" data-en="Water in mining and industry" data-pt="Água na mineração e na indústria">Água na mineração e na indústria</option>
+            <option value="Ambiente e qualidade da água" data-en="Environment and water quality" data-pt="Ambiente e qualidade da água">Ambiente e qualidade da água</option>
+            <option value="Dados, revisão e formação" data-en="Data, review and training" data-pt="Dados, revisão e formação">Dados, revisão e formação</option>
+            <option value="Outro" data-en="Other" data-pt="Outro">Outro</option>
+          </select></div>
+      </div>
+      <div class="form-group"><label for="msg" data-en="Project details *" data-pt="Detalhes do projecto *">Detalhes do projecto *</label><textarea id="msg" name="msg" required data-en-placeholder="What is the challenge? Where is it? What data is available? What is the timeline?" placeholder="Qual é o desafio? Onde fica? Que dados estão disponíveis? Qual o prazo?"></textarea></div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-clay" data-en="Send by e-mail" data-pt="Enviar por e-mail">Enviar por e-mail</button>
+        <button type="button" class="btn btn-ghost" id="wa-btn" data-en="Send by WhatsApp" data-pt="Enviar por WhatsApp">Enviar por WhatsApp</button>
+      </div>
+      <p class="form-hint" id="form-message" role="status" data-en="The message opens in the e-mail app, ready to send." data-pt="A mensagem abre na aplicação de e-mail, pronta a enviar.">A mensagem abre na aplicação de e-mail, pronta a enviar.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+{{> footer}}
+</body>
+</html>

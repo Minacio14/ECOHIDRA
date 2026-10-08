@@ -1,0 +1,110 @@
+<!--@title N1 — rastreamento de drenagem-->
+<!--@desc Rastreamento de drenagem de 39 km na estrada N1 (Sofala, Moçambique): 89 travessias, 196 bacias delimitadas, caudais de projecto e pré-dimensionamento. Estudo demonstrativo com dados públicos.-->
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+{{> head}}
+</head>
+<body>
+{{> nav}}
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" data-en="Case study" data-pt="Estudo">Estudo</span>
+    <h1 data-en="N1 road: 39 km drainage screening" data-pt="Estrada N1: rastreamento de drenagem de 39 km">Estrada N1: rastreamento de drenagem de 39 km</h1>
+    <p data-en="Watershed-to-structure analysis along Mozambique's N1 highway, in the flood-affected province of Sofala." data-pt="Análise bacia-estrutura ao longo da estrada N1 de Moçambique, na província de Sofala, afectada por cheias.">Análise bacia-estrutura ao longo da estrada N1 de Moçambique, na província de Sofala, afectada por cheias.</p>
+  </div>
+</section>
+
+<article class="study-article">
+  <div class="study-meta">
+    <span class="tag" data-en="Drainage screening" data-pt="Rastreamento de drenagem">Rastreamento de drenagem</span>
+    <span>2026</span><span>&bull;</span>
+    <span data-en="Demonstration study — public data" data-pt="Estudo demonstrativo — dados públicos">Estudo demonstrativo — dados públicos</span>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat"><b>89</b><span data-en="drainage crossings" data-pt="travessias de drenagem">travessias de drenagem</span></div>
+    <div class="stat"><b>196</b><span data-en="watersheds delineated" data-pt="bacias delimitadas">bacias delimitadas</span></div>
+    <div class="stat"><b>7</b><span data-en="crossings with TR50 flow ≥ 20 m³/s" data-pt="travessias com caudal TR50 ≥ 20 m³/s">travessias com caudal TR50 ≥ 20 m³/s</span></div>
+    <div class="stat"><b>203 m³/s</b><span data-en="maximum TR50 peak flow" data-pt="caudal de ponta máximo (TR50)">caudal de ponta máximo (TR50)</span></div>
+  </div>
+
+  <h2 data-en="Context" data-pt="Contexto">Contexto</h2>
+  <p data-en="The N1 is Mozambique's main highway, running 2,509 km from Maputo to the Rovuma river. It suffered flood-related closures in 2025/26. This demonstration study analyses a 39.2 km stretch in Sofala province — one of the most flood-affected zones — to show what a rapid drainage screening looks like before a full field campaign." data-pt="A N1 é a principal estrada de Moçambique, com 2.509 km entre Maputo e o rio Rovuma. Sofreu cortes por cheias em 2025/26. Este estudo demonstrativo analisa um troço de 39,2 km na província de Sofala — uma das zonas mais afectadas por cheias — para mostrar como é um rastreamento rápido de drenagem antes de uma campanha de campo completa.">A N1 é a principal estrada de Moçambique, com 2.509 km entre Maputo e o rio Rovuma. Sofreu cortes por cheias em 2025/26. Este estudo demonstrativo analisa um troço de 39,2 km na província de Sofala — uma das zonas mais afectadas por cheias — para mostrar como é um rastreamento rápido de drenagem antes de uma campanha de campo completa.</p>
+
+  <h2 data-en="Data and assumptions" data-pt="Dados e pressupostos">Dados e pressupostos</h2>
+  <p data-en="No field-surveyed cross-sections were used. The analysis relies on the Copernicus GLO-30 DEM (30 m), CHIRPS rainfall and the GCN250 curve-number product, all public datasets accessed through Google Earth Engine. The structure inventory is simulated: each of the 89 crossings is a location where the road alignment meets the drainage network, with no existing structure registered." data-pt="Não foram usadas secções transversais levantadas em campo. A análise baseia-se no Copernicus GLO-30 DEM (30 m), na precipitação CHIRPS e no produto de curve numbers GCN250, todos conjuntos de dados públicos acedidos através do Google Earth Engine. O inventário de estruturas é simulado: cada uma das 89 travessias é um local onde o traçado da estrada intersecta a rede de drenagem, sem estrutura existente registada.">Não foram usadas secções transversais levantadas em campo. A análise baseia-se no Copernicus GLO-30 DEM (30 m), na precipitação CHIRPS e no produto de curve numbers GCN250, todos conjuntos de dados públicos acedidos através do Google Earth Engine. O inventário de estruturas é simulado: cada uma das 89 travessias é um local onde o traçado da estrada intersecta a rede de drenagem, sem estrutura existente registada.</p>
+
+  <h2 data-en="Approach" data-pt="Abordagem">Abordagem</h2>
+  <ul>
+    <li data-en="196 contributing watersheds delineated with GRASS GIS terrain analysis on the Copernicus DEM" data-pt="196 bacias contribuintes delimitadas com análise de terreno em GRASS GIS sobre o Copernicus DEM">196 bacias contribuintes delimitadas com análise de terreno em GRASS GIS sobre o Copernicus DEM</li>
+    <li data-en="89 drainage outlets snapped to the road alignment and matched to their watersheds" data-pt="89 exutórios de drenagem ajustados ao traçado da estrada e associados às respectivas bacias">89 exutórios de drenagem ajustados ao traçado da estrada e associados às respectivas bacias</li>
+    <li data-en="Curve numbers from GCN250 and rainfall from CHIRPS extracted through Google Earth Engine" data-pt="Curve numbers do GCN250 e precipitação do CHIRPS extraídos através do Google Earth Engine">Curve numbers do GCN250 e precipitação do CHIRPS extraídos através do Google Earth Engine</li>
+    <li data-en="Peak discharge for TR25, TR50 and TR100: Rational method for small catchments (below 2 km², 82 crossings) and SCS curve-number method for larger ones (7 crossings)" data-pt="Caudal de ponta para TR25, TR50 e TR100: método racional para bacias pequenas (inferiores a 2 km², 82 travessias) e método SCS-CN para as maiores (7 travessias)">Caudal de ponta para TR25, TR50 e TR100: método racional para bacias pequenas (inferiores a 2 km², 82 travessias) e método SCS-CN para as maiores (7 travessias)</li>
+    <li data-en="Preliminary culvert or bridge configuration for every crossing, ranked by design flow" data-pt="Configuração preliminar de aqueduto ou ponte para cada travessia, ordenada por caudal de projecto">Configuração preliminar de aqueduto ou ponte para cada travessia, ordenada por caudal de projecto</li>
+  </ul>
+
+  <h2 data-en="Results" data-pt="Resultados">Resultados</h2>
+  <ul>
+    <li><strong data-en="89 crossings" data-pt="89 travessias">89 travessias</strong> <span data-en="screened along the 39.2 km stretch" data-pt="analisadas ao longo do troço de 39,2 km">analisadas ao longo do troço de 39,2 km</span></li>
+    <li><strong data-en="7 crossings with TR50 flow ≥ 20 m³/s" data-pt="7 travessias com caudal TR50 ≥ 20 m³/s">7 travessias com caudal TR50 ≥ 20 m³/s</strong> <span data-en="— first priority for field inspection" data-pt="— primeira prioridade para inspecção de campo">— primeira prioridade para inspecção de campo</span></li>
+    <li><strong data-en="13 crossings with equivalent diameter above 2.0 m" data-pt="13 travessias com diâmetro equivalente superior a 2,0 m">13 travessias com diâmetro equivalente superior a 2,0 m</strong> <span data-en="— bridge or box-culvert range" data-pt="— gama de ponte ou aqueduto de caixa">— gama de ponte ou aqueduto de caixa</span></li>
+    <li><strong data-en="64 crossings with a parallel channel" data-pt="64 travessias com canal paralelo">64 travessias com canal paralelo</strong> <span data-en="(diffuse re-crossing pattern)" data-pt="(padrão de re-travessia difusa)">(padrão de re-travessia difusa)</span></li>
+  </ul>
+
+  <h3 data-en="Crossings by TR50 design flow" data-pt="Travessias por caudal de projecto TR50">Travessias por caudal de projecto TR50</h3>
+  <table>
+    <thead><tr><th data-en="TR50 flow class" data-pt="Classe de caudal TR50">Classe de caudal TR50</th><th data-en="Crossings" data-pt="Travessias">Travessias</th><th>%</th></tr></thead>
+    <tbody>
+      <tr><td>≥ 20 m³/s</td><td>7</td><td>8%</td></tr>
+      <tr><td>5 – 20 m³/s</td><td>34</td><td>38%</td></tr>
+      <tr><td>1 – 5 m³/s</td><td>41</td><td>46%</td></tr>
+      <tr><td>&lt; 1 m³/s</td><td>7</td><td>8%</td></tr>
+    </tbody>
+  </table>
+
+  <h3 data-en="Preliminary configurations (top 5)" data-pt="Configurações preliminares (5 mais frequentes)">Configurações preliminares (5 mais frequentes)</h3>
+  <table>
+    <thead><tr><th data-en="Configuration" data-pt="Configuração">Configuração</th><th data-en="Crossings" data-pt="Travessias">Travessias</th></tr></thead>
+    <tbody>
+      <tr><td>1 × Ø0,80 m</td><td>21</td></tr>
+      <tr><td>1 × Ø1,20 m</td><td>14</td></tr>
+      <tr><td>1 × Ø1,00 m</td><td>13</td></tr>
+      <tr><td>1 × Ø1,50 m</td><td>11</td></tr>
+      <tr><td>1 × Ø1,80 m</td><td>8</td></tr>
+    </tbody>
+  </table>
+
+  <h2 data-en="Deliverable sheet" data-pt="Folha de entrega">Folha de entrega</h2>
+  <figure>
+    <img src="/estudos/img/n1/N1_Signature_PT.png" data-pt-src="/estudos/img/n1/N1_Signature_PT.png" data-en-src="/estudos/img/n1/N1_Signature_EN.png" alt="Folha síntese — rastreamento de drenagem, estrada N1, troço Save–Muxungué" loading="lazy">
+    <figcaption data-en="Synthesis sheet: alignment with 89 drainage crossings, summary indicators, methodology and discharge distribution." data-pt="Folha síntese: traçado com 89 travessias de drenagem, indicadores resumo, metodologia e distribuição de caudais.">Folha síntese: traçado com 89 travessias de drenagem, indicadores resumo, metodologia e distribuição de caudais.</figcaption>
+  </figure>
+
+  <h2 data-en="Interactive dashboard" data-pt="Painel interactivo">Painel interactivo</h2>
+  <p data-en="Full results are available in an interactive dashboard that opens in any browser. Selecting a crossing shows its watershed, peak flow and preliminary structure." data-pt="Os resultados completos estão num painel interactivo que abre em qualquer navegador. Ao seleccionar uma travessia são mostrados a bacia, o caudal de ponta e a estrutura preliminar.">Os resultados completos estão num painel interactivo que abre em qualquer navegador. Ao seleccionar uma travessia são mostrados a bacia, o caudal de ponta e a estrutura preliminar.</p>
+  <p><a href="/estudos/n1-dashboard" class="btn btn-ink" data-en="Open the dashboard →" data-pt="Abrir o painel →">Abrir o painel →</a></p>
+
+  <h2 data-en="Data sources" data-pt="Fontes de dados">Fontes de dados</h2>
+  <ul>
+    <li><strong>DEM:</strong> Copernicus GLO-30 (30 m)</li>
+    <li><strong data-en="Rainfall:" data-pt="Precipitação:">Precipitação:</strong> CHIRPS, Google Earth Engine</li>
+    <li><strong>Curve number:</strong> GCN250</li>
+    <li><strong data-en="Road alignment:" data-pt="Traçado da estrada:">Traçado da estrada:</strong> OpenStreetMap</li>
+    <li><strong data-en="Terrain analysis:" data-pt="Análise de terreno:">Análise de terreno:</strong> GRASS GIS 8.4</li>
+  </ul>
+
+  <blockquote data-en="Demonstration study using public data. The same workflow applies to client project data, with surveyed cross-sections and the real structure inventory, supporting a site-specific study." data-pt="Estudo demonstrativo com dados públicos. O mesmo fluxo de trabalho aplica-se aos dados do projecto do cliente, com secções transversais levantadas e o inventário real de estruturas, apoiando um estudo específico do local.">Estudo demonstrativo com dados públicos. O mesmo fluxo de trabalho aplica-se aos dados do projecto do cliente, com secções transversais levantadas e o inventário real de estruturas, apoiando um estudo específico do local.</blockquote>
+
+  <div class="study-nav">
+    <a href="/estudos" data-en="← All case studies" data-pt="← Todos os estudos">← Todos os estudos</a>
+    <a href="/contacto" data-en="Discuss a similar project →" data-pt="Discutir um projecto semelhante →">Discutir um projecto semelhante →</a>
+  </div>
+</article>
+
+</main>
+{{> footer}}
+</body>
+</html>
