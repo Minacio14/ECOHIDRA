@@ -7,7 +7,7 @@ Data: 2026-10-08 · Pasta: `C:\Users\inaci\Desktop\Freelancing\website_hydro` ·
 - O site SIGHA (`website_sigha`, https://sigha-kappa.vercel.app) **não foi alterado** e continua no ar. Verificado depois do deploy.
 - Foi criada uma cópia (`website_hydro`), reescrita só para **hidrologia, hidráulica, hidrogeologia e ambiente**, com identidade visual própria, e publicada num **projecto Vercel novo** (`ecohidra`, id `prj_9hwRft2G…`, distinto do `sigha`, id `prj_fJIpNQd8…`).
 - Nome escolhido: **ECOHIDRA** (proposta sua). Texto sem "Lda.", sem geotecnia, sem referências ao registo da empresa. Apresenta-se como **consultoria independente**.
-- Estado do GitHub: **pendente** (ver §7). O deploy foi feito pela Vercel CLI, que já estava autenticada.
+- GitHub: https://github.com/Minacio14/ECOHIDRA (ver §7). O deploy foi feito pela Vercel CLI, que já estava autenticada.
 
 ## 2. Sugestões de nome e sigla (foco água + ambiente)
 
@@ -42,40 +42,27 @@ Para mudar de nome: editar `site.config.json` (`brand`, `brandFullPt`, `brandFul
 6. Melhorias técnicas: URLs limpos, `sitemap.xml`, `robots.txt`, favicon, meta/OG, skip-link, menu mobile, `prefers-reduced-motion`.
 7. **Verificação**: desktop e mobile (375 px) sem scroll horizontal; PT/EN; menu mobile; 13 URLs do live com HTTP 200; pesquisa por termos proibidos no `dist/` sem resultados.
 
-## 4. Decisões de conteúdo (importante)
+## 4. Segunda fase (mesmo dia): o que mudou depois das suas instruções
 
-Aplicaram-se as correcções que a sua própria auditoria (`HANDOFF_CLAUDE_CODE_2026-10-07.md`, §5.6) previa para o site, e manteve-se o tom impessoal e a protecção do método do `AGENTS.md` (sem flopy, ras-commander, "via Python", etc.).
+- **Estudos reintroduzidos (6):** N1, condomínio (drenagem), aqueduto Al_B, risco de cheia do Rovubué, ruptura de barragem (Cahora Bassa, cenário hipotético) e águas subterrâneas (mina a céu aberto). Convertidos para o novo design, com URLs `/estudos/...`, links entre estudos corrigidos e o "SIGHA, Lda." apagado das 10 folhas PNG (PT/EN). O retrabalho científico dos estudos fica na outra sessão; aqui só se actualizam os ficheiros quando estiverem prontos.
+- **Correcções feitas na N1** (verificadas contra os dados do dashboard): tabela por classe de caudal estava trocada (34 em 5–20 m³/s; 41 em 1–5), método racional só para 82 travessias (< 2 km²) e SCS-CN para 7, "pontes necessárias" passou a "diâmetro equivalente > 2,0 m", removida a frase "validado em campo", removidos do dashboard os nomes internos do motor e os tempos de cálculo.
+- **Página Sobre redesenhada** em torno de si: retrato, nome, título, factos (4+ anos, PT/EN, Tete, HEC/MODFLOW), "como trabalho" em primeira pessoa, experiência representativa anonimizada (retirada do seu perfil Freelancer, sem mencionar a camada de automação) e dados de facturação. Inclui dados estruturados `Person` para pesquisa.
+- **WhatsApp +258 84 553 3050** activo: botão flutuante em todas as páginas, botões na página Sobre e no formulário, e linha no rodapé e no contacto.
+- **NUIT 125937586** e o seu nome aparecem no rodapé, no contacto e em Sobre.
+- **Rodapé e contacto:** e-mail, WhatsApp, localização, nome e NUIT.
 
-**Publicado: apenas 1 estudo (N1).** Ficaram de fora, de propósito:
+### Pontos a confirmar
+1. **Nome completo.** Usei "Marcos Inácio" (nome do perfil Freelancer + e-mail/GitHub). Se for outro, alterar `owner` em `site.config.json`.
+2. **Foto.** Usei o recorte da sua foto de perfil do Freelancer (`src/img/marcos.jpg`, 500 px). Para trocar, substituir o ficheiro. Não usei a imagem `Images\FreeL.jpeg` porque é a fotografia de verificação de identidade (mostra o BI e um código).
+3. **LinkedIn.** Sem URL; o botão fica escondido até preencher `linkedin` em `site.config.json`.
+4. **NUIT público.** O NUIT pessoal está visível no site. Quando tiver o enquadramento definitivo, mudar ou remover `nuit` no config.
+5. **Dados dos estudos.** As folhas e páginas incluem nomes e locais (Botswana/falha Zoetfontein e coordenadas UTM na folha de águas subterrâneas, condomínio Vale dos Embondeiros, acesso ao Alojamento B). Isto é igual ao site SIGHA. Se o repositório GitHub for público, esses ficheiros ficam públicos também.
 
-| Estudo | Motivo |
-|---|---|
-| Cahora Bassa (ruptura) | a auditoria recomenda retirar até refazer; volume do reservatório e equações de brecha inadequadas |
-| Mookane / MODFLOW | página e folha mostram "Botswana", falha "Zoetfontein", coordenadas UTM (confidencialidade, auditoria §3.4) |
-| Rovubué (risco de cheia) | extensão quase não varia com o caudal (+4% com Q×2); página cita HEC-RAS/HMS que não foram usados |
-| Al_B (aqueduto) | declive 1,7% vs 0,4% no talvegue; com 0,4% o Ø requerido sobe a ~1,8 m, e a folha recomenda Ø1,50 m; "controlo à entrada" não calculado |
-| CVE (condomínio) | nome de cliente na folha; Q fixos vindos de um PPTX; declive abaixo do erro vertical do DEM |
+## 5. Pendências técnicas (sessão de retrabalho dos estudos)
 
-As páginas e imagens destes estudos **continuam em `website_sigha`**; não foram copiadas para o novo repositório (assim os nomes de clientes não vão parar a um GitHub público).
+Itens da auditoria de 2026-10-07 que continuam por refazer: revalidação da N1 (só 7 de 89 cruzamentos comparados com HMS/RAS; declive em graus tratado como %), declive e controlo do aqueduto Al_B, Q fixos do CVE, extensão de inundação do Rovubué quase invariável com o caudal, volume do reservatório e equações de brecha de Cahora Bassa, e anonimização do estudo MODFLOW. As páginas "Ruptura de barragem" e "Água subterrânea" ainda trazem frases como "PAEBM" que a auditoria sugeria rever.
 
-**Correcções feitas no N1** (verificadas contra os dados embebidos no dashboard):
-- A tabela por classe de caudal estava **trocada** na página antiga (dizia 41 em 5–20 m³/s e 34 em 1–5). Os dados mostram **34 em 5–20 e 41 em 1–5**. Corrigido.
-- "Método racional" para tudo → agora: racional para 82 travessias (< 2 km²) e SCS-CN para 7.
-- "13 pontes necessárias" → "13 travessias com diâmetro equivalente > 2,0 m (gama de ponte ou aqueduto de caixa)" (o D_req é um diâmetro circular equivalente, não um calado).
-- "Validado em campo" removido; "gaps" explicado como inventário simulado.
-- Removidos do dashboard: nomes internos do motor/dimensionamento, e a linha de tempos de cálculo.
-- Rodapé "SIGHA, Lda." apagado das duas folhas PNG (PT/EN).
-
-## 5. Pendências antes de promover o site (por ordem de importância)
-
-1. **Revalidação do N1.** A auditoria mostra que só 7 dos 89 cruzamentos foram comparados com HMS/RAS; o declive em graus é tratado como %. A página usa a redacção "estudo demonstrativo / rastreamento", mas os números continuam sujeitos à revalidação.
-2. **Folha N1 e dashboard ainda têm o rótulo "Crítico/Alto" em inglês/mistura e "CRITICAL/HIGH"** no painel; foi só rebrandizado, não redesenhado.
-3. **Texto "Eu/nós":** o site fala em 3.ª pessoa ("A ECOHIDRA…"). Falta uma **pessoa visível** (nome, perfil, foto ou LinkedIn) na página Sobre, que num freelancer aumenta a confiança. Não o adicionei por não saber como quer aparecer.
-4. **WhatsApp:** botão preparado, desactivado até indicar o número (`site.config.json` → `whatsapp`).
-5. **E-mail público:** `inacio.mrcs@gmail.com` está visível no site (confirmado por si). Um e-mail com o domínio próprio (quando existir) fica mais profissional.
-6. **Domínio próprio** (ex. `ecohidra.co.mz`/`.com`): não registado.
-7. **Enquadramento fiscal/legal:** prestar serviços sem empresa funciona bem em plataformas internacionais, mas clientes mineiros e de infraestrutura em Moçambique normalmente pedem NUIT e facturação. O site já evita "Lda." e "empresa registada"; convém confirmar com um contabilista o enquadramento aplicável (ex. contribuinte singular) antes de assinar contratos locais.
-8. **Novos estudos:** quando os restantes forem revalidados, reintroduzir copiando de `website_sigha` e anonimizando nomes (ver §4).
+Questões não técnicas: nome ECOHIDRA (verificar marca/domínio), domínio próprio, e-mail com domínio próprio, e enquadramento fiscal.
 
 ## 6. Deploy
 
@@ -84,20 +71,13 @@ As páginas e imagens destes estudos **continuam em `website_sigha`**; não fora
 - O site SIGHA (`https://sigha-kappa.vercel.app`) foi reaberto depois do deploy e continua activo, com o mesmo título.
 - Para republicar depois de editar: `node build.mjs` (para testar) e `vercel deploy --prod --yes` dentro de `website_hydro`.
 
-## 7. GitHub (por fazer)
+## 7. GitHub
 
-Não há `gh` instalado nem credenciais GitHub neste PC; a Vercel CLI usa um token próprio e por isso funcionou. O repositório git local já existe (branch `main`, autor configurado só neste repo como `Inaciomrcs <inacio.mrcs@gmail.com>`). Para publicar:
-
-1. Criar um repositório **vazio** (de preferência privado) em https://github.com/new, sem README.
-2. Executar na pasta `website_hydro`:
+Repositório: https://github.com/Minacio14/ECOHIDRA (remote `origin` já configurado, branch `main`). O `git push` abre o login do GitHub no navegador (Git Credential Manager); após autenticar, o push conclui. Depois, para publicar automaticamente em cada push:
 
 ```bash
-git remote add origin https://github.com/SEU_UTILIZADOR/ecohidra.git
-git push -u origin main
-vercel git connect https://github.com/SEU_UTILIZADOR/ecohidra.git
+vercel git connect https://github.com/Minacio14/ECOHIDRA.git
 ```
-
-A partir daí, cada `git push` publica automaticamente.
 
 ## 8. Estrutura da pasta
 
@@ -106,8 +86,9 @@ website_hydro/
   site.config.json      marca, e-mail, WhatsApp, URL
   build.mjs             gerador estático (sem dependências)
   vercel.json           buildCommand + outputDirectory
-  src/pages/            index, servicos, sobre, estudos, contacto, estudos/n1-*
+  src/pages/            index, servicos, sobre, estudos, contacto, estudos/*
   src/partials/         head, nav, footer, cta, logo
   src/css|js|img        estilo, comportamento, SVGs
-  src/estudos-assets/   folhas do N1 (PT/EN)
+  src/estudos-assets/   folhas e figuras dos 6 estudos (PT/EN)
+  src/img/marcos.jpg    retrato (página Sobre)
 ```
