@@ -73,11 +73,9 @@ Questões não técnicas: nome ECOHIDRA (verificar marca/domínio), domínio pr�
 
 ## 7. GitHub
 
-Repositório: https://github.com/Minacio14/ECOHIDRA (remote `origin` já configurado, branch `main`). O `git push` abre o login do GitHub no navegador (Git Credential Manager); após autenticar, o push conclui. Depois, para publicar automaticamente em cada push:
-
-```bash
-vercel git connect https://github.com/Minacio14/ECOHIDRA.git
-```
+- Repositório: https://github.com/Minacio14/ECOHIDRA, branch `main` enviada (autenticação feita por si no navegador).
+- **Ligação automática Vercel ↔ GitHub: não concluída.** `vercel git connect` falhou porque a conta Vercel não tem acesso a esse repositório (a app GitHub da Vercel não está instalada para `Minacio14`, ou a conta Vercel está ligada a outro utilizador GitHub). Para activar: Vercel → projecto `ecohidra` → Settings → Git → Connect Git Repository → autorizar a app para `Minacio14/ECOHIDRA`. Depois cada `git push` publica sozinho.
+- Enquanto isso, o live é actualizado com `vercel deploy --prod --yes` dentro de `website_hydro` (foi o que se fez).
 
 ## 8. Estrutura da pasta
 
